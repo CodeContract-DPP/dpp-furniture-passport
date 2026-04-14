@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DPP Mueble — Editor</title>
+  <style>
+    :root {
+      --bg: #f5f7fa; --card: #ffffff; --border: #e2e8f0;
+      --text: #1a202c; --muted: #718096; --accent: #2b6cb0;
+      --green: #38a169; --amber: #d69e2e; --red: #e53e3e;
+      --purple: #6b46c1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    .app-header {
+      background: linear-gradient(135deg, #44337a 0%, #6b46c1 100%);
+      color: white; padding: 2rem; text-align: center;
+    }
+    .app-header h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+    .app-header p { opacity: .85; font-size: .9rem; }
+
+    .nav-bar {
+      background: var(--card); border-bottom: 1px solid var(--border); padding: .75rem 2rem;
+      display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap;
+    }
+    .nav-links { display: flex; gap: .5rem; }
+    .nav-links a {
+      text-decoration: none; color: var(--accent); font-weight: 600; font-size: .9rem;
+      padding: .4rem .8rem; border-radius: 6px;
+    }
+    .nav-links a:hover { background: #ebf4ff; }
+    .nav-links a.active { background: var(--purple); color: white; }
+
+    .toolbar {
+      background: var(--card); border-bottom: 1px solid var(--border);
+      padding: .75rem 2rem; display: flex; gap: .75rem; flex-wrap: wrap; align-items: center;
+    }
+    .toolbar button {
+      padding: .5rem 1rem; border-radius: 8px; border: 1px solid var(--border);
+      font-size: .85rem; font-weight: 600; cursor: pointer; transition: all .2s;
+    }
+    .btn-primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .btn-primary:hover { background: #2c5282; }
+    .btn-green { background: var(--green); color: white; border-color: var(--green); }
+    .btn-green:hover { background: #2f855a; }
+    .btn-purple { background: var(--purple); color: white; border-color: var(--purple); }
+    .btn-purple:hover { background: #553c9a; }
+    .btn-outline { background: var(--card); }
+    .btn-outline:hover { background: #f7fafc; }
+    .toolbar .spacer { flex: 1; }
+    .toolbar .status-msg { font-size: .82rem; color: var(--muted); }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+
+    .edit-section {
+      background: var(--card); border-radius: 12px; border: 1px solid var(--border);
+      margin-bottom: 1rem; overflow: hidden;
+    }
+    .edit-section-header {
+      padding: 1rem 1.25rem; cursor: pointer; display: flex; align-items: center; gap: .75rem;
+      background: #fafbfc; border-bottom: 1px solid var(--border);
+    }
+    .edit-section-header:hover { background: #f0f4f8; }
+    .edit-section-header h2 { font-size: 1rem; flex: 1; }
+    .edit-section-body { padding: 1rem 1.25rem; }
+    .edit-section-body.collapsed { display: none; }
+
+    .edit-attr {
+      border: 1px solid var(--border); border-radius: 10px; padding: 1rem;
+      margin-bottom: .75rem; background: #fafbfc;
+    }
+    .edit-attr-title {
+      display: flex; align-items: center; gap: .5rem; margin-bottom: .75rem;
+    }
+    .edit-attr-title h3 { font-size: .9rem; flex: 1; }
+
+    .field-group { margin-bottom: .5rem; }
+    .field-group label {
+      display: block; font-size: .78rem; color: var(--muted); font-weight: 600;
+      margin-bottom: .15rem;
+    }
+    .field-group input, .field-group select, .field-group textarea {
+      width: 100%; padding: .4rem .6rem; border: 1px solid var(--border); border-radius: 6px;
+      font-size: .85rem; font-family: inherit;
+    }
+    .field-group textarea { resize: vertical; min-height: 50px; }
+    .field-group select { background: white; }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+    .field-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .5rem; }
+
+    .subsection-label {
+      font-size: .78rem; font-weight: 700; color: var(--purple); text-transform: uppercase;
+      margin: .75rem 0 .4rem; padding-top: .5rem; border-top: 1px dashed #e2e8f0;
+    }
+    .subsection-label.doc { color: var(--accent); }
+
+    /* GitHub modal */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5);
+      z-index: 100; align-items: center; justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--card); border-radius: 12px; padding: 1.5rem; width: 90%; max-width: 460px;
+    }
+    .modal h3 { margin-bottom: 1rem; }
+    .modal .field-group { margin-bottom: .75rem; }
+    .modal-actions { display: flex; gap: .5rem; justify-content: flex-end; margin-top: 1rem; }
+
+    .chevron { font-size: .9rem; color: var(--muted); }
+    .loading { text-align: center; padding: 3rem; color: var(--muted); }
+    .error { text-align: center; padding: 3rem; color: var(--red); }
+    .toast {
+      position: fixed; bottom: 2rem; right: 2rem; background: #2d3748; color: white;
+      padding: .75rem 1.25rem; border-radius: 8px; font-size: .85rem; z-index: 200;
+      opacity: 0; transition: opacity .3s;
+    }
+    .toast.show { opacity: 1; }
+
+    @media (max-width: 640px) {
+      .field-row, .field-row-3 { grid-template-columns: 1fr; }
+      .toolbar { padding: .75rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>✏️ Editor DPP Mueble</h1>
+    <p>Edita los 42 atributos, documentos fuente y evidencia Trackline</p>
+  </header>
+
+  <nav class="nav-bar">
+    <div class="nav-links">
+      <a href="index.html">Visor</a>
+      <a href="edit.html" class="active">Editor</a>
+    </div>
+  </nav>
+
+  <div class="toolbar">
+    <button class="btn-outline" onclick="loadFromFile()">📂 Cargar JSON</button>
+    <button class="btn-primary" onclick="downloadJSON()">💾 Descargar JSON</button>
+    <button class="btn-green" onclick="openGitHubModal()">🚀 Guardar en GitHub</button>
+    <span class="spacer"></span>
+    <span class="status-msg" id="statusMsg">Sin cambios</span>
+  </div>
+
+  <main class="container" id="editor-root">
+    <div class="loading">Cargando editor…</div>
+  </main>
+
+  <!-- GitHub Modal -->
+  <div class="modal-overlay" id="ghModal">
+    <div class="modal">
+      <h3>Guardar en GitHub</h3>
+      <div class="field-group">
+        <label>Token de acceso personal (PAT)</label>
+        <input type="password" id="ghToken" placeholder="ghp_...">
+      </div>
+      <div class="field-group">
+        <label>Repositorio (usuario/repo)</label>
+        <input type="text" id="ghRepo" value="CodeContract-DPP/dpp-furniture-passport">
+      </div>
+      <div class="field-group">
+        <label>Archivo destino</label>
+        <input type="text" id="ghPath" value="data/dpp.json">
+      </div>
+      <div class="field-group">
+        <label>Mensaje de commit</label>
+        <input type="text" id="ghMsg" value="Actualización DPP desde editor web">
+      </div>
+      <div class="modal-actions">
+        <button class="btn-outline" onclick="closeGitHubModal()">Cancelar</button>
+        <button class="btn-green" onclick="saveToGitHub()">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <input type="file" id="fileInput" accept=".json" style="display:none" onchange="handleFileLoad(event)">
+
+  <script>
+    let dppData = null;
+    let dirty = false;
+
+    /* ── helpers ── */
+    function humanKey(key) {
+      return key.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase()).replace(/_/g, ' ');
+    }
+    function showToast(msg, ms = 3000) {
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), ms);
+    }
+    function markDirty() {
+      dirty = true;
+      document.getElementById('statusMsg').textContent = '● Cambios sin guardar';
+      document.getElementById('statusMsg').style.color = '#e53e3e';
+    }
+
+    /* ── build editor ── */
+    function buildEditor() {
+      const root = document.getElementById('editor-root');
+      if (!dppData) { root.innerHTML = '<div class="error">Sin datos</div>'; return; }
+
+      let html = '';
+      Object.entries(dppData).forEach(([sKey, section]) => {
+        if (sKey === '_meta') return;
+        const icon = section._icon || '📁';
+        const title = section._title || humanKey(sKey);
+
+        html += `<div class="edit-section">
+          <div class="edit-section-header" onclick="toggleEditSection('${sKey}')">
+            <span>${icon}</span><h2>${title}</h2><span class="chevron" id="echev-${sKey}">▼</span>
+          </div>
+          <div class="edit-section-body" id="ebody-${sKey}">`;
+
+        Object.entries(section).forEach(([aKey, attr]) => {
+          if (aKey.startsWith('_')) return;
+          const metaKeys = ['_status','_legalBasis','_sourceDocument','_evidence','_note'];
+
+          html += `<div class="edit-attr">
+            <div class="edit-attr-title">
+              <h3>${humanKey(aKey)}</h3>
+            </div>`;
+
+          // Status selector
+          html += `<div class="field-row">
+            <div class="field-group">
+              <label>Estado</label>
+              <select data-path="${sKey}.${aKey}._status" onchange="updateField(this)">
+                <option value="pending" ${attr._status==='pending'?'selected':''}>🔴 Pendiente</option>
+                <option value="partial" ${attr._status==='partial'?'selected':''}>🟡 Parcial</option>
+                <option value="verified" ${attr._status==='verified'?'selected':''}>✅ Verificado</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Base jurídica</label>
+              <input type="text" value="${attr._legalBasis||''}" data-path="${sKey}.${aKey}._legalBasis" onchange="updateField(this)">
+            </div>
+          </div>`;
+
+          // Data fields
+          Object.entries(attr).forEach(([fKey, fVal]) => {
+            if (metaKeys.includes(fKey)) return;
+            const path = `${sKey}.${aKey}.${fKey}`;
+            if (fVal !== null && typeof fVal === 'object' && !Array.isArray(fVal)) return; // skip nested objects for now
+            if (Array.isArray(fVal)) {
+              html += `<div class="field-group">
+                <label>${humanKey(fKey)}</label>
+                <input type="text" value="${fVal.join(', ')}" data-path="${path}" data-type="array" onchange="updateField(this)">
+              </div>`;
+            } else if (typeof fVal === 'boolean') {
+              html += `<div class="field-group">
+                <label>${humanKey(fKey)}</label>
+                <select data-path="${path}" data-type="bool" onchange="updateField(this)">
+                  <option value="">— seleccionar —</option>
+                  <option value="true" ${fVal===true?'selected':''}>Sí</option>
+                  <option value="false" ${fVal===false?'selected':''}>No</option>
+                </select>
+              </div>`;
+            } else {
+              html += `<div class="field-group">
+                <label>${humanKey(fKey)}</label>
+                <input type="text" value="${fVal !== null ? fVal : ''}" data-path="${path}" onchange="updateField(this)" placeholder="—">
+              </div>`;
+            }
+          });
+
+          // Source Document
+          if (attr._sourceDocument) {
+            const d = attr._sourceDocument;
+            html += `<div class="subsection-label doc">📄 Documento fuente</div>
+              <div class="field-row">
+                <div class="field-group">
+                  <label>Nombre documento</label>
+                  <input type="text" value="${d.name||''}" data-path="${sKey}.${aKey}._sourceDocument.name" onchange="updateField(this)">
+                </div>
+                <div class="field-group">
+                  <label>Tipo</label>
+                  <input type="text" value="${d.type||''}" data-path="${sKey}.${aKey}._sourceDocument.type" onchange="updateField(this)">
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field-group">
+                  <label>Quién genera</label>
+                  <input type="text" value="${d.generatedBy||''}" data-path="${sKey}.${aKey}._sourceDocument.generatedBy" onchange="updateField(this)">
+                </div>
+                <div class="field-group">
+                  <label>Plazo</label>
+                  <input type="text" value="${d.deadline||''}" data-path="${sKey}.${aKey}._sourceDocument.deadline" onchange="updateField(this)">
+                </div>
+              </div>`;
+          }
+
+          // Trackline Evidence
+          if (attr._evidence) {
+            const e = attr._evidence;
+            html += `<div class="subsection-label">🔗 Evidencia Trackline (blockchain)</div>
+              <div class="field-row">
+                <div class="field-group">
+                  <label>Trackline Process ID</label>
+                  <input type="text" value="${e.tracklineProcessId||''}" data-path="${sKey}.${aKey}._evidence.tracklineProcessId" onchange="updateField(this)" placeholder="P-XXXX">
+                </div>
+                <div class="field-group">
+                  <label>Blockchain Tx Hash</label>
+                  <input type="text" value="${e.blockchainTxHash||''}" data-path="${sKey}.${aKey}._evidence.blockchainTxHash" onchange="updateField(this)" placeholder="0x…">
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field-group">
+                  <label>Fecha registro</label>
+                  <input type="date" value="${e.registeredDate||''}" data-path="${sKey}.${aKey}._evidence.registeredDate" onchange="updateField(this)">
+                </div>
+                <div class="field-group">
+                  <label>Registrado por</label>
+                  <input type="text" value="${e.registeredBy||''}" data-path="${sKey}.${aKey}._evidence.registeredBy" onchange="updateField(this)">
+                </div>
+              </div>`;
+          }
+
+          // Note
+          html += `<div class="field-group" style="margin-top:.5rem">
+            <label>Nota</label>
+            <input type="text" value="${attr._note||''}" data-path="${sKey}.${aKey}._note" onchange="updateField(this)" style="font-style:italic;color:#718096">
+          </div>`;
+
+          html += `</div>`; // close edit-attr
+        });
+
+        html += `</div></div>`; // close body + section
+      });
+
+      root.innerHTML = html;
+    }
+
+    /* ── update field in data ── */
+    function updateField(el) {
+      const path = el.dataset.path.split('.');
+      let obj = dppData;
+      for (let i = 0; i < path.length - 1; i++) obj = obj[path[i]];
+      let val = el.value;
+      if (el.dataset.type === 'array') val = val.split(',').map(s => s.trim()).filter(Boolean);
+      else if (el.dataset.type === 'bool') val = val === 'true' ? true : val === 'false' ? false : null;
+      else if (val === '') val = null;
+      obj[path[path.length - 1]] = val;
+      markDirty();
+    }
+
+    /* ── section toggle ── */
+    function toggleEditSection(key) {
+      const body = document.getElementById('ebody-' + key);
+      const chev = document.getElementById('echev-' + key);
+      if (body.classList.contains('collapsed')) {
+        body.classList.remove('collapsed'); chev.textContent = '▼';
+      } else {
+        body.classList.add('collapsed'); chev.textContent = '▶';
+      }
+    }
+
+    /* ── file I/O ── */
+    function loadFromFile() { document.getElementById('fileInput').click(); }
+    function handleFileLoad(e) {
+      const file = e.target.files[0]; if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          dppData = JSON.parse(ev.target.result);
+          buildEditor();
+          showToast('Archivo cargado: ' + file.name);
+        } catch (err) { showToast('Error: JSON inválido'); }
+      };
+      reader.readAsText(file);
+    }
+
+    function downloadJSON() {
+      if (!dppData) return;
+      // Update date
+      if (dppData._meta) dppData._meta.generatedDate = new Date().toISOString().slice(0, 10);
+      const blob = new Blob([JSON.stringify(dppData, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+      a.download = 'dpp.json'; a.click(); URL.revokeObjectURL(a.href);
+      dirty = false;
+      document.getElementById('statusMsg').textContent = 'Descargado ✓';
+      document.getElementById('statusMsg').style.color = '#38a169';
+      showToast('JSON descargado');
+    }
+
+    /* ── GitHub save ── */
+    function openGitHubModal() { document.getElementById('ghModal').classList.add('open'); }
+    function closeGitHubModal() { document.getElementById('ghModal').classList.remove('open'); }
+
+    async function saveToGitHub() {
+      const token = document.getElementById('ghToken').value.trim();
+      const repo = document.getElementById('ghRepo').value.trim();
+      const path = document.getElementById('ghPath').value.trim();
+      const msg = document.getElementById('ghMsg').value.trim();
+      if (!token || !repo || !path) { showToast('Completa todos los campos'); return; }
+
+      if (dppData._meta) dppData._meta.generatedDate = new Date().toISOString().slice(0, 10);
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(dppData, null, 2))));
+
+      try {
+        // Get current file SHA
+        const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+        let sha = null;
+        if (getRes.ok) { sha = (await getRes.json()).sha; }
+
+        const body = { message: msg, content: content };
+        if (sha) body.sha = sha;
+
+        const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+          method: 'PUT',
+          headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+
+        if (putRes.ok) {
+          showToast('Guardado en GitHub ✓');
+          dirty = false;
+          document.getElementById('statusMsg').textContent = 'Guardado en GitHub ✓';
+          document.getElementById('statusMsg').style.color = '#38a169';
+          closeGitHubModal();
+        } else {
+          const err = await putRes.json();
+          showToast('Error: ' + (err.message || putRes.status));
+        }
+      } catch (err) {
+        showToast('Error de conexión: ' + err.message);
+      }
+    }
+
+    /* ── init ── */
+    async function init() {
+      try {
+        const res = await fetch('data/dpp.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        dppData = await res.json();
+        buildEditor();
+      } catch (err) {
+        document.getElementById('editor-root').innerHTML =
+          `<div class="error">Error: ${err.message}<br>Usa "Cargar JSON" para abrir un archivo local.</div>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
