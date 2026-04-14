@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "schema": "DPP Furniture Catalog v0.1",
+    "description": "Catálogo de productos con DPP disponible",
+    "lastUpdated": "2026-04-14"
+  },
+  "manufacturers": [
+    {
+      "id": "code-contract",
+      "name": "Code Contract S.L.",
+      "location": "Zarautz, Gipuzkoa",
+      "country": "España",
+      "cluster": "Demo",
+      "products": [
+        {
+          "id": "code-chair",
+          "name": "Silla CODE (4 patas madera, asiento tapizado)",
+          "family": "CODE",
+          "category": "Asientos",
+          "cnCode": "9401 61 00",
+          "dppFile": "dpp-code-chair.json",
+          "dppStatus": "draft",
+          "completionPct": 26,
+          "tracklineEvidence": true,
+          "image": "../img/code-chair.jpg"
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalManufacturers": 1,
+    "totalProducts": 1,
+    "averageCompletion": 26
+  }
+}
