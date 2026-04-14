@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DPP Mueble - Pasaporte Digital de Producto</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DKW5YSTNB0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DKW5YSTNB0');
+</script>
 <style>
 :root{--bg:#f5f7fa;--card:#fff;--border:#e2e8f0;--text:#1a202c;--muted:#718096;--accent:#2b6cb0;--green:#38a169;--amber:#d69e2e;--red:#e53e3e;--gray:#a0aec0;--purple:#6b46c1}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -149,7 +157,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 <div id="dpp-root"></div>
 </main>
 <footer class="app-footer">
-DPP Mueble v0.3 - <a href="https://github.com/CodeContract-DPP/dpp-furniture-passport" target="_blank">GitHub</a>
+DPP Mueble v0.3 - <a href="https://github.com/edupeter/dpp-furniture-passport" target="_blank">GitHub</a>
 - Evidencia: <a href="https://trackline.codecontract.com" target="_blank">Trackline by Code Contract S.L.</a>
 - Regulacion ESPR (UE) 2024/1781 - Registro Central Art. 13
 </footer>
@@ -161,15 +169,4 @@ function loadSelected(){var s=document.getElementById('jsonFile');DPP.init(s.val
   var params = new URLSearchParams(window.location.search);
   var id = params.get('id');
   var sel = document.getElementById('jsonFile');
-  if (id === 'template' || id === 'plantilla') {
-    sel.value = 'data/dpp.json';
-  } else if (id) {
-    // Try to load data/{id}.json, fallback to code chair example
-    sel.value = 'data/dpp-code-chair.json';
-  }
-  DPP.init(sel.value, 'dpp-root');
-})();
-</script>
-</body>
-</html>
-   
+  
