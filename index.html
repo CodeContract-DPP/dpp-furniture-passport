@@ -163,10 +163,22 @@ DPP Mueble v0.3 - <a href="https://github.com/edupeter/dpp-furniture-passport" t
 </footer>
 <script src="js/app.js"></script>
 <script>
-function loadSelected(){var s=document.getElementById('jsonFile');DPP.init(s.value,'dpp-root');}
+function loadSelected(){
+  var s=document.getElementById('jsonFile');
+  DPP.init(s.value,'dpp-root');
+}
 // Support ?id= URL parameter
 (function(){
   var params = new URLSearchParams(window.location.search);
   var id = params.get('id');
   var sel = document.getElementById('jsonFile');
-  
+  if (id === 'template' || id === 'plantilla') {
+    sel.value = 'data/dpp.json';
+  } else if (id === 'code-chair') {
+    sel.value = 'data/dpp-code-chair.json';
+  }
+  DPP.init(sel.value, 'dpp-root');
+})();
+</script>
+</body>
+</html>
