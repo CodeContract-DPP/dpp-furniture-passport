@@ -181,10 +181,14 @@ const DPP = (() => {
 
   async function init(jsonPath, containerId) {
     var container = document.getElementById(containerId);
+    if (!container) {
+      console.error('[DPP] Contenedor no encontrado:', containerId);
+      return;
+    }
     container.innerHTML = '<div class="loading">Cargando DPP\u2026</div>';
     try {
-      var res = await fetch(jsonPath);
-      if (!res.ok) throw new Error('HTTP ' + res.status);
+      var res = await fetch(jsonPath, { cache: 'no-cache' });
+      if (!res.ok) throw new Error('No se pudo descargar ' + jsonPath + ' (HTTP ' + res.status + ')');
       var data = await res.json();
       window._dppData = data;
       var html = renderMeta(data._meta) + renderSummary(data);
@@ -208,8 +212,31 @@ const DPP = (() => {
       container.innerHTML = html;
       bindFilters();
     } catch(err) {
-      container.innerHTML = '<div class="error">Error cargando DPP: ' + err.message + '</div>';
+      console.error('[DPP] Error cargando datos:', err);
+      container.innerHTML = '<div class="error">' +
+        '<strong>\u26A0\uFE0F Error cargando el DPP</strong><br>' +
+        '<span style="font-size:.9rem">' + err.message + '</span><br>' +
+        '<span style="font-size:.8rem;color:#718096;display:block;margin-top:.5rem">' +
+        'Revisa la consola del navegador (F12) para m\u00e1s detalles, o prueba a recargar con Ctrl+F5.' +
+        '</span></div>';
     }
+  }
+
+  // Safety net: si el HTML no llama a DPP.init() manualmente,
+  // lo disparamos automaticamente al cargar el DOM (con el valor por defecto del select).
+  function autoInit() {
+    var container = document.getElementById('dpp-root');
+    if (!container) return;
+    // Si ya hay contenido renderizado, no hacemos nada.
+    if (container.children.length > 0) return;
+    var sel = document.getElementById('jsonFile');
+    var jsonPath = sel ? sel.value : 'data/dpp.json';
+    init(jsonPath, 'dpp-root');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', autoInit);
+  } else {
+    setTimeout(autoInit, 0);
   }
 
   function bindFilters() {
