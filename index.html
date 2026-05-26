@@ -136,7 +136,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(
 <label for="jsonFile">Archivo:</label>
 <select id="jsonFile" onchange="loadSelected()">
 <option value="data/dpp.json">Plantilla DPP vacia</option>
-<option value="data/dpp-code-chair.json" selected>Ejemplo: Silla CODE (Demo)</option>
+<option value="data/dpp-hari-chair.json" selected>Silla HARI - Ondarreta (EPD real)</option>
+<option value="data/dpp-code-chair.json">Silla CODE - Code Contract (Demo)</option>
 </select>
 </div>
 </nav>
@@ -176,6 +177,8 @@ function loadSelected(){
     sel.value = 'data/dpp.json';
   } else if (id === 'code-chair') {
     sel.value = 'data/dpp-code-chair.json';
+  } else if (id === 'hari-chair' || id === 'hari') {
+    sel.value = 'data/dpp-hari-chair.json';
   }
   DPP.init(sel.value, 'dpp-root');
 })();

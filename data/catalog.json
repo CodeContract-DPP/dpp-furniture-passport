@@ -1,16 +1,42 @@
 {
   "_meta": {
-    "schema": "DPP Furniture Catalog v0.1",
-    "description": "Catálogo de productos con DPP disponible",
-    "lastUpdated": "2026-04-14"
+    "schema": "DPP Furniture Catalog v0.2",
+    "description": "Catalogo de productos con DPP disponible",
+    "lastUpdated": "2026-05-26"
   },
   "manufacturers": [
+    {
+      "id": "ondarreta",
+      "name": "Ondarreta Mesas y Sillas, S.L.",
+      "location": "Oiartzun, Gipuzkoa",
+      "country": "Espana",
+      "cluster": "Habic / Basque Living",
+      "website": "https://www.ondarreta.com",
+      "products": [
+        {
+          "id": "hari-chair",
+          "name": "Silla HARI (estructura acero + haya, asiento tapizado)",
+          "family": "Hari",
+          "category": "Asientos",
+          "cnCode": "9401 71 00",
+          "cpcCode": "UN CPC 3811",
+          "dppFile": "dpp-hari-chair.json",
+          "dppStatus": "draft",
+          "completionPct": 43,
+          "tracklineEvidence": false,
+          "epdReference": "S-P-08979",
+          "epdUrl": "https://www.environdec.com/library/epd8979",
+          "image": null
+        }
+      ]
+    },
     {
       "id": "code-contract",
       "name": "Code Contract S.L.",
       "location": "Zarautz, Gipuzkoa",
-      "country": "España",
+      "country": "Espana",
       "cluster": "Demo",
+      "website": "https://codecontract.com",
       "products": [
         {
           "id": "code-chair",
@@ -18,18 +44,21 @@
           "family": "CODE",
           "category": "Asientos",
           "cnCode": "9401 61 00",
+          "cpcCode": "CPC 3811",
           "dppFile": "dpp-code-chair.json",
           "dppStatus": "draft",
-          "completionPct": 26,
+          "completionPct": 74,
           "tracklineEvidence": true,
-          "image": "../img/code-chair.jpg"
+          "epdReference": "Ficticio",
+          "epdUrl": null,
+          "image": "img/code-chair.jpg"
         }
       ]
     }
   ],
   "stats": {
-    "totalManufacturers": 1,
-    "totalProducts": 1,
-    "averageCompletion": 26
+    "totalManufacturers": 2,
+    "totalProducts": 2,
+    "averageCompletion": 58
   }
 }

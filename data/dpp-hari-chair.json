@@ -1,0 +1,1012 @@
+{
+  "_meta": {
+    "schema": "FurniturePassDataModel v0.2 (ESPR-Ready + Trackline)",
+    "basedOn": "ESPR (UE) 2024/1781 + Working Plan 2025-2030",
+    "regulation": "ESPR 2024/1781 · REACH · EUDR 2023/1115 · CS3D 2024/1760",
+    "generatedDate": "2026-05-26",
+    "version": "0.2-piloto",
+    "evidenceProvider": "Trackline by Code Contract S.L.",
+    "dppStatus": {
+      "value": "draft",
+      "_status": "assumed",
+      "_note": "DPP piloto basado en datos reales de la EPD verificada S-P-08979 (TECNALIA)."
+    },
+    "dppGranularity": {
+      "value": "model",
+      "_status": "assumed",
+      "_note": "DPP a nivel de modelo (HARI Chair). Aplica a todas las variantes del modelo Hari."
+    },
+    "notes": "DPP Silla Hari · Ondarreta Mesas y Sillas, S.L. · Fabricada en Oiartzun (Gipuzkoa). Datos primarios de la EPD S-P-08979 (válida hasta 2029). 18 de 42 atributos verificados (43%), 13 a actualizar (31%), 11 pendientes (26%)."
+  },
+  "_registry": {
+    "_icon": "🏛️",
+    "_title": "Registro Central DPP (Art. 13 ESPR)",
+    "_note": "Campos requeridos para el Registro Central de la Comisión Europea. Operativo desde 19/07/2026.",
+    "uniqueProductIdentifier": {
+      "value": null,
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 9(1), Art. 13(2)(a) LEY",
+      "_sourceDocument": {
+        "name": "Sistema DPP + GTIN GS1 asignado",
+        "type": "Identificador único",
+        "generatedBy": "Ondarreta + GS1 España",
+        "deadline": "19/07/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Pendiente: solicitar GTIN a GS1 España para el modelo Hari. Cuota anual GS1 desde ~200€."
+    },
+    "economicOperator": {
+      "name": "Ondarreta Mesas y Sillas, S.L.",
+      "role": "manufacturer",
+      "vatNumber": null,
+      "address": "Zuaznabar 83, 20180 Oiartzun, Guipúzcoa",
+      "country": "España",
+      "_status": "partial",
+      "_legalBasis": "ESPR Art. 13(2)(b) LEY",
+      "_sourceDocument": {
+        "name": "Escritura constitución + CIF Ondarreta",
+        "type": "Documento legal",
+        "generatedBy": "Ondarreta · Legal",
+        "deadline": "19/07/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Nombre y dirección confirmados por EPD. Falta NIF/CIF para registro."
+    },
+    "commodityCode": {
+      "value": "9401 71 00",
+      "nomenclature": "Combined Nomenclature (CN)",
+      "_status": "partial",
+      "_legalBasis": "ESPR Art. 13(2)(c) LEY",
+      "_sourceDocument": {
+        "name": "Arancel integrado TARIC",
+        "type": "Código aduanero",
+        "generatedBy": "Ondarreta · Logística / Comercio exterior",
+        "deadline": "19/07/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "9401 71 00 = Asientos con armazón de metal, tapizados. Pendiente confirmación con Ondarreta (alternativa: 9401 61 00 si se considera armazón de madera predominante)."
+    },
+    "dppAccessUrl": {
+      "value": "https://codecontract-dpp.github.io/dpp-furniture-passport/?id=hari-chair",
+      "_status": "partial",
+      "_legalBasis": "ESPR Art. 13(2)(d), Art. 10 LEY",
+      "_sourceDocument": {
+        "name": "URL DPP en GitHub Pages (piloto)",
+        "type": "Enlace web",
+        "generatedBy": "Code Contract S.L.",
+        "deadline": "19/07/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "URL piloto. Para producción requiere dominio propio estable (decisión pendiente Ondarreta/Code Contract)."
+    },
+    "registrationStatus": {
+      "value": "not_registered",
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 13 LEY",
+      "_sourceDocument": {
+        "name": "Confirmación registro Comisión Europea",
+        "type": "Registro oficial",
+        "generatedBy": "Comisión Europea (portal)",
+        "deadline": "19/07/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Registro Central abre 19/07/2026. Estado actual: en preparación."
+    },
+    "dataCarrier": {
+      "type": "QR",
+      "format": "GS1 Digital Link",
+      "url": null,
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 9(3), Art. 11 LEY",
+      "_sourceDocument": {
+        "name": "QR code generado (GS1 Digital Link)",
+        "type": "Soporte de datos",
+        "generatedBy": "Code Contract S.L.",
+        "deadline": "19/07/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Pendiente GTIN. Formato final: https://id.gs1.org/01/{GTIN}"
+    }
+  },
+  "productIdentification": {
+    "_icon": "📋",
+    "_title": "Identificación del producto",
+    "productName": {
+      "value": "HARI Chair",
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Nombre comercial oficial Ondarreta."
+    },
+    "manufacturer": {
+      "value": "Ondarreta Mesas y Sillas, S.L.",
+      "address": "Zuaznabar 83, 20180 Oiartzun, Guipúzcoa",
+      "country": "España",
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Razón social y dirección confirmadas en EPD."
+    },
+    "countryOfManufacturing": {
+      "value": "España (100% fabricado en Europa)",
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Ensamblaje final en planta Ondarreta (Oiartzun)."
+    },
+    "productCodeGTIN": {
+      "value": null,
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 9(3) · LEY",
+      "_sourceDocument": {
+        "name": "Registro GS1 España",
+        "type": "Código de barras EAN-13/GTIN-14",
+        "generatedBy": "Ondarreta · Logística",
+        "deadline": "19/07/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Pendiente alta GS1 España (cuota anual desde ~200€). Bloqueante para Registro Central Art. 13."
+    },
+    "modelReference": {
+      "value": "Hari (4W-TP)",
+      "epdReference": "S-P-08979",
+      "_status": "partial",
+      "_legalBasis": "ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "Catálogo Ondarreta",
+        "type": "Catálogo",
+        "generatedBy": "Ondarreta · Comercial",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Confirmar referencia interna de catálogo Ondarreta para el modelo Hari (4W-TP)."
+    },
+    "productCategory": {
+      "value": "Asientos",
+      "cpcCode": "UN CPC 3811",
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Clasificación UN CPC 3811 (Seats)."
+    },
+    "dimensions": {
+      "width": 47.5,
+      "depth": 55,
+      "height": 81.5,
+      "seatHeight": 46,
+      "unit": "cm",
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "47,5 × 55 × 81,5 cm. Altura asiento 46 cm."
+    },
+    "productImage": {
+      "url": null,
+      "_status": "partial",
+      "_legalBasis": "ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "EPD pág. 3 + fotografía Ondarreta",
+        "type": "Archivo multimedia",
+        "generatedBy": "Ondarreta · Marketing",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Imagen incluida en EPD (pág. 3). Pendiente: alojar fotografía alta resolución en /img."
+    },
+    "declaredUnit": {
+      "value": "1 silla Hari durante 15 años de vida útil",
+      "_status": "verified",
+      "_legalBasis": "ISO 14040; c-PCR-021 · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Unidad declarada según EPD."
+    }
+  },
+  "materialComposition": {
+    "_icon": "🧱",
+    "_title": "Materiales y BOM",
+    "billOfMaterials": {
+      "components": [
+        { "material": "Acero", "weightKg": 2.965, "pct": 46.1 },
+        { "material": "Haya", "weightKg": 2.238, "pct": 34.8 },
+        { "material": "Cola", "weightKg": 0.354, "pct": 5.5 },
+        { "material": "Pintura", "weightKg": 0.345, "pct": 5.4 },
+        { "material": "Aleación Cu/Zn/Al", "weightKg": 0.280, "pct": 4.4 },
+        { "material": "Poliéster", "weightKg": 0.137, "pct": 2.1 },
+        { "material": "Poliuretano", "weightKg": 0.099, "pct": 1.5 },
+        { "material": "Latón", "weightKg": 0.016, "pct": 0.2 }
+      ],
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 9(1); Anexo III · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "BOM completa según EPD. Próximo paso: añadir referencia de proveedor por componente."
+    },
+    "totalProductWeight": {
+      "value": 6.434,
+      "unit": "kg",
+      "_status": "verified",
+      "_legalBasis": "ESPR Anexo III · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Peso neto sin embalaje."
+    },
+    "recycledContent": {
+      "byMaterial": [
+        { "material": "Acero", "recycledPct": 80 },
+        { "material": "Poliéster", "recycledPct": 90 },
+        { "material": "Resto", "recycledPct": 0 }
+      ],
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 7(2)(b); Anexo I · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "% reciclado declarado en EPD. Pendiente certificación pre/post-consumo del proveedor."
+    },
+    "woodOrigin": {
+      "value": "Proveedores europeos · cadena de custodia FSC/PEFC",
+      "certification": "FSC/PEFC",
+      "licenseNumber": null,
+      "_status": "verified",
+      "_legalBasis": "EUDR (UE) 2023/1115 Art. 4 · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979 + certificado FSC/PEFC proveedor",
+        "type": "EPD + certificado cadena custodia",
+        "generatedBy": "Ondarreta + proveedor madera",
+        "deadline": "30/06/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Cadena custodia FSC/PEFC mencionada. Pendiente nº de licencia y geolocalización parcela (EUDR)."
+    },
+    "hazardousSubstancesSVHC": {
+      "value": null,
+      "declared": false,
+      "_status": "pending",
+      "_legalBasis": "REACH Art. 33; ESPR Art. 7(5) · LEY",
+      "_sourceDocument": {
+        "name": "Declaración SVHC proveedores + análisis interno",
+        "type": "Declaración REACH",
+        "generatedBy": "Ondarreta · Calidad",
+        "deadline": "Ya en vigor"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "No declaradas explícitamente en EPD. Solicitar a proveedores listado SVHC > 0,1% según última lista candidata ECHA."
+    }
+  },
+  "chemicalSafety": {
+    "_icon": "⚗️",
+    "_title": "Seguridad química",
+    "formaldehydeEmission": {
+      "qualitative": "Adhesivos bajos en formaldehído",
+      "measuredMgM3": null,
+      "testStandard": "EN 717-1",
+      "limit": "0,062 mg/m³ desde 06/08/2026",
+      "_status": "partial",
+      "_legalBasis": "REACH Anexo XVII entrada 77; Reg. (UE) 2023/1464 · LEY",
+      "_sourceDocument": {
+        "name": "Ensayo EN 717-1 (cámara)",
+        "type": "Informe ensayo laboratorio",
+        "generatedBy": "Laboratorio acreditado",
+        "deadline": "06/08/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Dato cualitativo en EPD (Ecoinvent). Requiere ensayo EN 717-1 con valor cuantitativo antes de 06/08/2026."
+    },
+    "diisocyanates": {
+      "value": null,
+      "puFoamPresent": true,
+      "puFoamWeightKg": 0.099,
+      "_status": "pending",
+      "_legalBasis": "REACH Anexo XVII entrada 74; Reg. (UE) 2020/1149 · LEY",
+      "_sourceDocument": {
+        "name": "Declaración proveedor espuma PU + certificado formación",
+        "type": "Declaración técnica + formación operarios",
+        "generatedBy": "Proveedor espuma + Ondarreta RRHH",
+        "deadline": "Ya en vigor"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Poliuretano presente (0,099 kg). Solicitar declaración diisocianatos libres + certificado formación obligatoria operarios."
+    },
+    "vocEmissions": {
+      "qualitative": "<0,8% del peso en productos barnizados",
+      "measuredUgM3": null,
+      "testStandard": "ISO 16000 / EN 16516",
+      "_status": "partial",
+      "_legalBasis": "ESPR Anexo I; Dir. 2004/42/CE · LEY",
+      "_sourceDocument": {
+        "name": "Ensayo COV cámara",
+        "type": "Informe ensayo laboratorio",
+        "generatedBy": "Laboratorio acreditado",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Dato cualitativo Ecoinvent. Requiere ensayo cuantitativo ISO 16000 o EN 16516."
+    },
+    "scipNotification": {
+      "value": null,
+      "scipNumber": null,
+      "_status": "pending",
+      "_legalBasis": "Directiva Marco Residuos 2008/98/CE Art. 9(1)(i) · LEY",
+      "_sourceDocument": {
+        "name": "Notificación SCIP portal ECHA",
+        "type": "Registro oficial",
+        "generatedBy": "Ondarreta · REACH (portal ECHA gratuito)",
+        "deadline": "Ya en vigor"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Obligatorio si producto contiene SVHC > 0,1%. Depende de resultado de hazardousSubstancesSVHC."
+    },
+    "reachCompliance": {
+      "value": "Declaraciones Red List proveedores mencionadas en EPD",
+      "declarationDocument": null,
+      "_status": "partial",
+      "_legalBasis": "REACH (CE) 1907/2006 · LEY",
+      "_sourceDocument": {
+        "name": "Declaración formal conformidad REACH",
+        "type": "Declaración interna firmada",
+        "generatedBy": "Ondarreta · Calidad",
+        "deadline": "Ya en vigor"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Existen declaraciones Red List de proveedores. Formalizar declaración global REACH con referencia última actualización lista SVHC."
+    },
+    "safetyDataSheets": {
+      "fdsAvailable": false,
+      "components": ["cola", "pintura/barniz", "espuma PU", "aleaciones"],
+      "_status": "partial",
+      "_legalBasis": "REACH Art. 31; CLP (CE) 1272/2008 · LEY",
+      "_sourceDocument": {
+        "name": "FDS proveedores químicos",
+        "type": "Ficha Datos Seguridad",
+        "generatedBy": "Proveedores químicos",
+        "deadline": "Ya en vigor"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "FDS no incluidas en EPD. Solicitar a proveedores: cola, pintura/barniz, espuma PU, aleaciones."
+    }
+  },
+  "carbonFootprint": {
+    "_icon": "🌍",
+    "_title": "Huella de carbono y energía",
+    "gwpTotal": {
+      "value": 9.28,
+      "unit": "kg CO₂ eq",
+      "scope": "cradle to grave, 15 años",
+      "dataSource": "Ecoinvent (secundario)",
+      "_status": "partial",
+      "_legalBasis": "ESPR Art. 7(2)(a); ISO 14067 · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979 (verificada TECNALIA)",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Valor de EPD pero basado en datos secundarios Ecoinvent. Para v1.0 actualizar con datos primarios de proveedores (acero, haya, PU)."
+    },
+    "gwpByPhase": {
+      "upstream": 3.16,
+      "core": 1.52,
+      "downstream": 4.60,
+      "unit": "kg CO₂ eq",
+      "_status": "partial",
+      "_legalBasis": "ESPR Anexo I; EN 15804 · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Core ya es primario (OK). Upstream requiere datos primarios proveedor. Downstream: escenario modelado aceptable."
+    },
+    "primaryEnergyRenewable": {
+      "value": 184,
+      "unit": "MJ",
+      "breakdown": "70 MJ energía + 114 MJ como materia prima",
+      "_status": "partial",
+      "_legalBasis": "ESPR Anexo I; ISO 14044 · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Consumo eléctrico fábrica ya primario. Datos energéticos proveedores pendientes."
+    },
+    "primaryEnergyNonRenewable": {
+      "value": 247,
+      "unit": "MJ",
+      "breakdown": "231 MJ energía + 15,9 MJ como materia prima",
+      "_status": "partial",
+      "_legalBasis": "ESPR Anexo I; ISO 14044 · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Parte fábrica (core) primaria. Parte proveedores (upstream) requiere actualización."
+    }
+  },
+  "durability": {
+    "_icon": "⏳",
+    "_title": "Durabilidad",
+    "expectedLifetime": {
+      "value": 15,
+      "unit": "años",
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 7(2)(c); Anexo I · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979 (unidad declarada)",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Vida útil declarada en EPD."
+    },
+    "testStandard": {
+      "value": "EN 16139:2013, categoría L2 (uso severo, no doméstico)",
+      "_status": "verified",
+      "_legalBasis": "ESPR Anexo I; EN 16139 · LEY",
+      "_sourceDocument": {
+        "name": "Informe ensayo EN 16139",
+        "type": "Informe laboratorio acreditado",
+        "generatedBy": "Laboratorio acreditado",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "EN 16139 cat. L2. Pendiente: nº informe + laboratorio acreditado."
+    },
+    "commercialWarranty": {
+      "value": null,
+      "years": null,
+      "_status": "partial",
+      "_legalBasis": "ESPR Art. 7(2)(c) · LEY",
+      "_sourceDocument": {
+        "name": "Política comercial Ondarreta",
+        "type": "Documento interno",
+        "generatedBy": "Ondarreta · Comercial",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "No indicada en EPD. Solicitar a Ondarreta duración garantía y condiciones."
+    }
+  },
+  "repairability": {
+    "_icon": "🔧",
+    "_title": "Reparabilidad",
+    "repairabilityIndex": {
+      "value": null,
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 7(2)(c); Anexo I punto 1(f) PENDIENTE AD",
+      "_sourceDocument": {
+        "name": "Evaluación reparabilidad",
+        "type": "Auditoría técnica",
+        "generatedBy": "Ondarreta + consultor externo",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Metodología pendiente acto delegado. Evaluar: acceso componentes, herramientas, coste reparación."
+    },
+    "sparePartsAvailability": {
+      "value": null,
+      "spareList": null,
+      "minYearsAvailable": null,
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 7(2)(c); Anexo I PENDIENTE AD",
+      "_sourceDocument": {
+        "name": "Lista recambios + política post-venta",
+        "type": "Documento comercial",
+        "generatedBy": "Ondarreta · Post-venta",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "No indicada en EPD. Recomendado: 7-10 años disponibilidad post-venta."
+    },
+    "repairInstructions": {
+      "url": null,
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 7(2)(c); Anexo I PENDIENTE AD",
+      "_sourceDocument": {
+        "name": "Manual reparación digital",
+        "type": "PDF / enlace",
+        "generatedBy": "Ondarreta · Técnico",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Manual reparación accesible digitalmente con procedimientos paso a paso."
+    }
+  },
+  "circularityAndDisassembly": {
+    "_icon": "♻️",
+    "_title": "Desmontaje y circularidad",
+    "disassemblyInstructions": {
+      "url": null,
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 7(2)(d); Anexo I punto 1(h) PENDIENTE AD",
+      "_sourceDocument": {
+        "name": "Guía desensamblaje",
+        "type": "PDF técnico",
+        "generatedBy": "Ondarreta · Ingeniería",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Necesario para recicladores y gestores de residuos. Incluir herramientas, tiempos y secuencia."
+    },
+    "recyclabilityRate": {
+      "value": null,
+      "recyclableMaterials": ["acero (100%)", "madera", "cartón"],
+      "_status": "pending",
+      "_legalBasis": "ESPR Anexo I punto 1(g) PENDIENTE AD",
+      "_sourceDocument": {
+        "name": "Cálculo reciclabilidad ISO 14021",
+        "type": "Estudio técnico",
+        "generatedBy": "Ondarreta + consultor",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Pendiente cálculo según ISO 14021 o metodología acto delegado."
+    },
+    "endOfLifeScenario": {
+      "value": "Reciclaje/vertedero/incineración según mix europeo",
+      "dataSource": "ACV cradle to grave (Ecoinvent)",
+      "_status": "partial",
+      "_legalBasis": "ESPR Anexo I; ISO 14044 · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979 (escenario fin de vida)",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Escenario modelado aceptable. Actualizar con tasas reales reciclaje mercado destino."
+    }
+  },
+  "packaging": {
+    "_icon": "📦",
+    "_title": "Embalaje",
+    "packagingMaterials": {
+      "components": [
+        { "material": "Cartón", "weightKg": 1.100, "pct": 40 },
+        { "material": "Palé madera", "weightKg": 1.560, "pct": 57 },
+        { "material": "HDPE", "weightKg": 0.060 },
+        { "material": "PP", "weightKg": 0.009 },
+        { "material": "Papel", "weightKg": 0.013 }
+      ],
+      "_status": "verified",
+      "_legalBasis": "ESPR Anexo I; Dir. 94/62/CE · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Lista completa de materiales según EPD."
+    },
+    "packagingRecycledContent": {
+      "byMaterial": [
+        { "material": "Cartón", "recycledPct": 70 },
+        { "material": "Resto", "recycledPct": 0 }
+      ],
+      "_status": "verified",
+      "_legalBasis": "ESPR Anexo I; Reg. (UE) 2025/40 (envases) · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979 + certificación proveedor cartón",
+        "type": "EPD + certificación",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "% reciclado embalaje según EPD."
+    }
+  },
+  "supplyChain": {
+    "_icon": "🚚",
+    "_title": "Cadena de suministro",
+    "rawMaterialOrigins": {
+      "value": "Europa, proveedores locales (genérico)",
+      "byMaterial": null,
+      "_status": "partial",
+      "_legalBasis": "ESPR Art. 9(1); CS3D (UE) 2024/1760 · LEY",
+      "_sourceDocument": {
+        "name": "Declaración país de origen por proveedor",
+        "type": "Declaración técnica",
+        "generatedBy": "Ondarreta + proveedores",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Dato genérico Ecoinvent. Pendiente país de origen específico por material (acero, haya, PU)."
+    },
+    "woodTraceability": {
+      "value": "FSC/PEFC mencionado, sin detalle parcela",
+      "geolocation": null,
+      "species": null,
+      "harvestDate": null,
+      "_status": "partial",
+      "_legalBasis": "EUDR (UE) 2023/1115 Art. 4-9 · LEY",
+      "_sourceDocument": {
+        "name": "Declaración EUDR proveedor madera + geolocalización",
+        "type": "Declaración diligencia debida",
+        "generatedBy": "Proveedor madera + Ondarreta",
+        "deadline": "30/06/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Plazo EUDR 30/06/2026. Crítico: obtener geolocalización parcela, especie y fecha tala."
+    },
+    "supplyChainDueDiligence": {
+      "value": null,
+      "_status": "pending",
+      "_legalBasis": "CS3D (UE) 2024/1760 · LEY",
+      "_sourceDocument": {
+        "name": "Declaración diligencia debida CS3D",
+        "type": "Documento corporativo",
+        "generatedBy": "Ondarreta · Dirección",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Diligencia debida proveedores Tier 1 y críticos según CS3D."
+    }
+  },
+  "complianceAndDigital": {
+    "_icon": "✅",
+    "_title": "Conformidad y soporte digital",
+    "epdLink": {
+      "url": "https://www.environdec.com/library/epd8979",
+      "epdNumber": "S-P-08979",
+      "validUntil": "2029",
+      "_status": "verified",
+      "_legalBasis": "ISO 14025; ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979 (International EPD System)",
+        "type": "EPD verificada",
+        "generatedBy": "Ondarreta · verificado TECNALIA",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "EPD verificada en programa EPD International. URL pública permanente."
+    },
+    "certifications": {
+      "list": [
+        "ISO 14006 (Ecodiseño)",
+        "ISO 14001",
+        "ISO 9001",
+        "OEKO-TEX Standard 100",
+        "Greenguard",
+        "EU Ecolabel (tejidos)"
+      ],
+      "_status": "verified",
+      "_legalBasis": "ESPR Art. 9(1) · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979 + certificados originales",
+        "type": "Certificaciones",
+        "generatedBy": "Ondarreta · Calidad",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Lista certificaciones según EPD. Próximo paso: añadir nº certificado y fecha vigencia."
+    },
+    "verificationBody": {
+      "name": "TECNALIA R&I Certificación S.L.",
+      "accreditation": "ENAC nº 125/C-PR283",
+      "_status": "verified",
+      "_legalBasis": "ISO 14025; ESPR Art. 9 · LEY",
+      "_sourceDocument": {
+        "name": "EPD S-P-08979 (verificación TECNALIA)",
+        "type": "EPD verificada",
+        "generatedBy": "TECNALIA R&I Certificación S.L.",
+        "deadline": "Acto delegado ~2028"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "TECNALIA acreditado ENAC nº 125/C-PR283."
+    },
+    "dppIdentifier": {
+      "value": null,
+      "carrierType": "QR (GS1 Digital Link)",
+      "_status": "pending",
+      "_legalBasis": "ESPR Art. 9-11; Art. 12 · LEY",
+      "_sourceDocument": {
+        "name": "QR generado + soporte físico",
+        "type": "Soporte de datos",
+        "generatedBy": "Code Contract + Ondarreta producción",
+        "deadline": "19/07/2026"
+      },
+      "_evidence": {
+        "tracklineProcessId": null,
+        "blockchainTxHash": null,
+        "registeredDate": null,
+        "registeredBy": null
+      },
+      "_note": "Pendiente GTIN + QR físico en producto. Bloqueante v1.0."
+    }
+  }
+}
