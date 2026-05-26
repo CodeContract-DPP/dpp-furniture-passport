@@ -193,17 +193,18 @@ const DPP = (() => {
       window._dppData = data;
       var html = renderMeta(data._meta) + renderSummary(data);
 
-      // Registry section first (highlighted)
-      if (data._registry) {
-        html += renderSection('_registry', data._registry, 'registry-highlight');
-      }
-
+      // Filtros primero, aplican a todas las secciones (incluido _registry)
       html += '<div class="filter-bar">' +
         '<button class="filter-btn active" data-filter="all">Todos</button>' +
         '<button class="filter-btn" data-filter="verified">\u2705 Verificados</button>' +
         '<button class="filter-btn" data-filter="partial">\u26A0\uFE0F Parciales</button>' +
         '<button class="filter-btn" data-filter="pending">\u274C Pendientes</button>' +
         '</div>';
+
+      // Registry section primero (destacada)
+      if (data._registry) {
+        html += renderSection('_registry', data._registry, 'registry-highlight');
+      }
 
       Object.keys(data).forEach(function(k) {
         if (k === '_meta' || k === '_registry') return;
