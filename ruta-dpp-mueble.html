@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruta DPP Mueble — Guia para fabricantes</title>
+<meta name="description" content="Guia paso a paso para implantar el Pasaporte Digital de Producto (DPP) en fabricantes de mueble. Reglamento ESPR 2024/1781, ESPR Working Plan 2025-2030, REACH, EUDR. Por Code Contract.">
+<meta name="keywords" content="DPP, pasaporte digital producto, mueble, ESPR 2024/1781, fabricantes, asientos, mesas, almacenaje, oficina, descanso, EPD, DAP, EN 16139, EN 717-1, GS1 Digital Link, EUDR, Trackline">
+<meta name="author" content="Code Contract S.L.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://codecontract-dpp.github.io/dpp-furniture-passport/ruta-dpp-mueble.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://codecontract-dpp.github.io/dpp-furniture-passport/ruta-dpp-mueble.html">
+<meta property="og:title" content="Ruta DPP Mueble — Guia para fabricantes">
+<meta property="og:description" content="Guia practica para implantar el Pasaporte Digital de Producto en mueble. ESPR 2024/1781, Working Plan 2025-2030, 7 familias de producto, checklist y FAQ.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Code Contract - DPP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ruta DPP Mueble — Guia para fabricantes">
+<meta name="twitter:description" content="Guia practica para implantar el Pasaporte Digital de Producto en mueble. ESPR 2024/1781, Working Plan 2025-2030.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1FA91;</text></svg>">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DKW5YSTNB0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DKW5YSTNB0', { 'content_group': 'DPP Mueble - Guia' });
+</script>
+
+<style>
+:root {
+  --dark: #1a1a2e;
+  --green: #2e7d4f;
+  --green-light: #e8f5ee;
+  --blue: #2563eb;
+  --blue-light: #eff6ff;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --red: #dc2626;
+  --red-light: #fef2f2;
+  --purple: #7c3aed;
+  --purple-light: #f5f3ff;
+  --teal: #0d9488;
+  --teal-light: #f0fdfa;
+  --gray: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f8fafc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: #1f2937; line-height: 1.6; }
+
+.header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #5b3a2e 100%);
+  color: white; padding: 40px 20px 32px; text-align: center;
+}
+.header h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+.header p { font-size: 15px; opacity: 0.85; max-width: 700px; margin: 0 auto; }
+.header .reg-badge {
+  display: inline-block; margin-top: 16px;
+  background: rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+}
+
+.doc-status-bar { max-width: 1100px; margin: -20px auto 0; padding: 0 20px; position: relative; z-index: 2; }
+.doc-status {
+  background: white; border: 2px solid var(--amber); border-radius: 12px;
+  padding: 16px 20px; display: flex; align-items: center; gap: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.doc-status-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--amber-light); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.doc-status-text { flex: 1; }
+.doc-status-text h3 { font-size: 14px; font-weight: 700; color: var(--amber); }
+.doc-status-text p { font-size: 12px; color: var(--gray); margin-top: 2px; }
+.doc-status-version { font-size: 11px; color: var(--gray); text-align: right; white-space: nowrap; }
+.doc-status-version strong { color: #1f2937; display: block; font-size: 12px; }
+
+.deadline-banner {
+  background: linear-gradient(90deg, #5b3a2e, #8b5a3c);
+  color: white; text-align: center; padding: 14px 20px;
+  font-size: 15px; font-weight: 600; margin-top: 20px;
+}
+.deadline-banner span { font-size: 20px; margin-right: 8px; }
+
+.hierarchy-box { max-width: 1100px; margin: 24px auto 0; padding: 0 20px; }
+.hierarchy { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 20px 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.hierarchy h3 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 14px; text-align: center; }
+.hierarchy-levels { display: flex; gap: 0; align-items: stretch; }
+.h-level { flex: 1; padding: 14px 16px; text-align: center; position: relative; }
+.h-level:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 20%; height: 60%; width: 1px; background: var(--border); }
+.h-level-icon { font-size: 24px; margin-bottom: 6px; }
+.h-level-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.h-level-desc { font-size: 11px; color: var(--gray); line-height: 1.4; }
+.h-level-badge { display: inline-block; margin-top: 8px; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+.h-ley .h-level-title { color: #1d4ed8; } .h-ley .h-level-badge { background: #dbeafe; color: #1d4ed8; }
+.h-guia .h-level-title { color: #065f46; } .h-guia .h-level-badge { background: #d1fae5; color: #065f46; }
+.h-solucion .h-level-title { color: #92400e; } .h-solucion .h-level-badge { background: #fef3c7; color: #92400e; }
+.hierarchy-arrow { display: flex; align-items: center; justify-content: center; padding: 0 4px; font-size: 18px; color: var(--border); }
+.hierarchy-note { margin-top: 12px; padding-top: 12px; border-top: 1px solid #f3f4f6; font-size: 11px; color: var(--gray); text-align: center; line-height: 1.5; }
+
+.impl-timeline { max-width: 1100px; margin: 24px auto 0; padding: 0 20px; }
+.impl-timeline-box { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 20px 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.impl-timeline-box h3 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 16px; text-align: center; }
+.tl-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tl-table th { text-align: left; padding: 8px 10px; font-weight: 700; color: var(--gray); border-bottom: 2px solid var(--border); font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+.tl-table td { padding: 10px; border-bottom: 1px solid #f3f4f6; vertical-align: top; }
+.tl-table tr:last-child td { border-bottom: none; }
+.tl-date-cell { font-weight: 700; white-space: nowrap; }
+.tl-milestone { font-weight: 600; color: #1f2937; }
+.tl-publisher { color: var(--gray); font-size: 11px; }
+.tl-status-badge { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
+.tl-past { background: var(--green-light); color: var(--green); }
+.tl-upcoming { background: var(--amber-light); color: var(--amber); }
+.tl-future { background: var(--red-light); color: var(--red); }
+.tl-da-note { font-size: 10px; color: var(--amber); font-style: italic; margin-top: 2px; }
+.impl-timeline-note { margin-top: 12px; padding-top: 12px; border-top: 1px solid #f3f4f6; font-size: 11px; color: var(--gray); text-align: center; line-height: 1.5; }
+
+.waves-box { max-width: 1100px; margin: 24px auto 0; padding: 0 20px; }
+.waves { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 20px 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.waves h3 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 16px; text-align: center; }
+.waves-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.wave-card { border-radius: 12px; padding: 16px; border: 1px solid var(--border); text-align: center; }
+.wave-card h4 { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.wave-card .wave-year { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+.wave-card p { font-size: 11px; color: var(--gray); line-height: 1.4; }
+.wave-1 { background: var(--green-light); } .wave-1 h4, .wave-1 .wave-year { color: var(--green); }
+.wave-2 { background: var(--amber-light); border-color: var(--amber); } .wave-2 h4, .wave-2 .wave-year { color: var(--amber); }
+.wave-3 { background: var(--blue-light); } .wave-3 h4, .wave-3 .wave-year { color: var(--blue); }
+.wave-current { box-shadow: 0 0 0 2px var(--amber); }
+
+.legend { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gray); background: white; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); }
+.legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+
+.phase { margin-bottom: 32px; background: white; border-radius: 16px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.phase-header { padding: 20px 24px; display: flex; align-items: center; gap: 16px; cursor: pointer; user-select: none; }
+.phase-header:hover { background: #fafbfc; }
+.phase-number { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: white; flex-shrink: 0; }
+.phase-info { flex: 1; }
+.phase-info h2 { font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.phase-info p { font-size: 13px; color: var(--gray); margin-top: 2px; }
+.phase-deadline { font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+.phase-status { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.3px; }
+.ps-complete { background: var(--green-light); color: var(--green); }
+.ps-partial { background: var(--amber-light); color: var(--amber); }
+.ps-pending { background: var(--red-light); color: var(--red); }
+.phase-chevron { font-size: 14px; color: var(--gray); transition: transform 0.2s; }
+.phase-header.collapsed .phase-chevron { transform: rotate(-90deg); }
+.phase-body { border-top: 1px solid var(--border); }
+.phase-body.hidden { display: none; }
+
+.phase-green .phase-number { background: var(--green); } .phase-green .phase-deadline { background: var(--green-light); color: var(--green); }
+.phase-blue .phase-number { background: var(--blue); } .phase-blue .phase-deadline { background: var(--blue-light); color: var(--blue); }
+.phase-amber .phase-number { background: var(--amber); } .phase-amber .phase-deadline { background: var(--amber-light); color: var(--amber); }
+.phase-red .phase-number { background: var(--red); } .phase-red .phase-deadline { background: var(--red-light); color: var(--red); }
+.phase-purple .phase-number { background: var(--purple); } .phase-purple .phase-deadline { background: var(--purple-light); color: var(--purple); }
+.phase-teal .phase-number { background: var(--teal); } .phase-teal .phase-deadline { background: var(--teal-light); color: var(--teal); }
+
+.step { padding: 16px 24px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: flex-start; gap: 16px; }
+.step:last-child { border-bottom: none; }
+.step-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; background: #f9fafb; border: 1px solid var(--border); }
+.step-content { flex: 1; min-width: 0; }
+.step-content h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.step-content p { font-size: 13px; color: #4b5563; }
+
+.doc-group { margin-top: 10px; }
+.doc-group-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; padding-left: 2px; }
+.dg-ley { color: #1d4ed8; }
+.dg-guia { color: #065f46; }
+.dg-solucion { color: #92400e; }
+.doc-group-links { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.doc-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px; text-decoration: none; transition: all 0.15s; }
+.doc-link:hover { filter: brightness(0.95); transform: translateY(-1px); }
+.doc-normativa { background: #dbeafe; color: #1d4ed8; }
+.doc-guia { background: #d1fae5; color: #065f46; }
+.doc-interno { background: #fef3c7; color: #92400e; }
+.doc-external { background: #e9d5ff; color: #6b21a8; }
+
+.result-box { background: linear-gradient(135deg, #5b3a2e 0%, #8b5a3c 100%); color: white; border-radius: 16px; padding: 32px; text-align: center; margin-top: 8px; }
+.result-box h2 { font-size: 22px; margin-bottom: 8px; }
+.result-box p { font-size: 14px; opacity: 0.9; max-width: 600px; margin: 0 auto 20px; }
+.result-items { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.result-item { background: rgba(255,255,255,0.15); padding: 10px 18px; border-radius: 10px; font-size: 13px; font-weight: 600; }
+
+.cta-section { max-width: 1100px; margin: 0 auto; padding: 0 20px 32px; }
+.cta-box { background: white; border-radius: 16px; border: 2px solid #5b3a2e; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.cta-box h2 { font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+.cta-box > p { font-size: 14px; color: #4b5563; margin-bottom: 20px; max-width: 700px; }
+.cta-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.cta-step { background: var(--bg); border-radius: 12px; padding: 16px; border: 1px solid var(--border); }
+.cta-step-num { font-size: 11px; font-weight: 700; color: #5b3a2e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.cta-step h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.cta-step p { font-size: 12px; color: var(--gray); }
+.cta-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+.cta-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 8px; text-decoration: none; transition: all 0.15s; }
+.cta-link:hover { filter: brightness(0.95); transform: translateY(-1px); }
+.cta-link-primary { background: #5b3a2e; color: white; }
+.cta-link-secondary { background: #f1e3d3; color: #5b3a2e; }
+
+.families-box { max-width: 1100px; margin: 24px auto 0; padding: 0 20px; }
+.families { background: white; border-radius: 14px; border: 1px solid var(--border); padding: 20px 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.families h3 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; text-align: center; }
+.families > p { font-size: 12px; color: var(--gray); text-align: center; margin-bottom: 16px; }
+.families-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.fam-card { border-radius: 10px; padding: 14px; border: 1px solid var(--border); cursor: pointer; transition: all 0.15s; position: relative; background: #fcfcfd; }
+.fam-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); transform: translateY(-1px); }
+.fam-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.fam-card .fam-wave { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 8px; display: inline-block; margin-bottom: 6px; background: var(--amber-light); color: var(--amber); }
+.fam-card .fam-norm { font-size: 11px; color: var(--gray); margin-bottom: 4px; }
+.fam-card .fam-risk { font-size: 11px; color: #b91c1c; font-weight: 600; }
+.fam-card .fam-detail { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid #f3f4f6; font-size: 11px; color: #4b5563; line-height: 1.5; }
+.fam-card.expanded .fam-detail { display: block; }
+.fam-card .fam-expand { font-size: 10px; color: var(--blue); font-weight: 600; margin-top: 6px; }
+
+.faq-box { max-width: 1100px; margin: 0 auto; padding: 0 20px 32px; }
+.faq { background: white; border-radius: 16px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.faq-title { padding: 20px 24px; font-size: 18px; font-weight: 700; color: var(--dark); text-align: center; border-bottom: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid #f3f4f6; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { padding: 16px 24px; display: flex; align-items: center; gap: 12px; cursor: pointer; user-select: none; font-size: 14px; font-weight: 600; color: #1f2937; }
+.faq-q:hover { background: #fafbfc; }
+.faq-q .faq-icon { font-size: 18px; color: var(--blue); flex-shrink: 0; }
+.faq-q .faq-chevron { margin-left: auto; font-size: 12px; color: var(--gray); transition: transform 0.2s; }
+.faq-q.collapsed .faq-chevron { transform: rotate(-90deg); }
+.faq-a { padding: 0 24px 16px 54px; font-size: 13px; color: #4b5563; line-height: 1.6; }
+.faq-a.hidden { display: none; }
+
+.footer { text-align: center; padding: 24px 20px 40px; font-size: 12px; color: var(--gray); }
+.footer a { color: var(--blue); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .header h1 { font-size: 22px; }
+  .phase-header { flex-wrap: wrap; }
+  .step { flex-direction: column; }
+  .hierarchy-levels { flex-direction: column; gap: 12px; }
+  .h-level:not(:last-child)::after { display: none; }
+  .hierarchy-arrow { transform: rotate(90deg); }
+  .doc-status { flex-wrap: wrap; }
+  .tl-table { font-size: 11px; }
+  .cta-steps { grid-template-columns: 1fr; }
+  .waves-grid { grid-template-columns: 1fr; }
+  .families-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Ruta hacia el DPP de Mueble</h1>
+  <p>Guia paso a paso para que un fabricante de mueble cumpla con el Reglamento ESPR 2024/1781 y tenga su Pasaporte Digital de Producto operativo</p>
+  <div class="reg-badge">ESPR (UE) 2024/1781 &middot; ESPR Working Plan 2025-2030 &middot; REACH &middot; EUDR &middot; EN 16139</div>
+</div>
+
+<div class="doc-status-bar">
+  <div class="doc-status">
+    <div class="doc-status-icon">&#x1F7E1;</div>
+    <div class="doc-status-text">
+      <h3>Estado del documento: EN REVISION</h3>
+      <p>Version de trabajo alineada con el ESPR 2024/1781, ESPR Working Plan 2025-2030 y obligaciones transversales en vigor a mayo 2026.</p>
+    </div>
+    <div class="doc-status-version">
+      <strong>v0.1</strong>
+      26 mayo 2026
+    </div>
+  </div>
+</div>
+
+<div class="deadline-banner">
+  <span>&#x23F0;</span> Hito clave: 19 julio 2026 &mdash; Apertura del Registro Central DPP (Art. 13 ESPR). 6 agosto 2026 &mdash; Nuevo limite EN 717-1 formaldehido 0,062 mg/m&sup3;. 30 junio 2026 &mdash; Diligencia debida EUDR para madera.
+</div>
+
+<div class="hierarchy-box">
+  <div class="hierarchy">
+    <h3>Tres niveles de documentacion (de mayor a menor rango)</h3>
+    <div class="hierarchy-levels">
+      <div class="h-level h-ley">
+        <div class="h-level-icon">&#x2696;&#xFE0F;</div>
+        <div class="h-level-title">Nivel 1: LEY</div>
+        <div class="h-level-desc">Reglamento ESPR (UE) 2024/1781, REACH, EUDR, restriccion de formaldehido. Obligatorio, no negociable. Publicado en el Diario Oficial de la UE.</div>
+        <div class="h-level-badge">Obligatorio</div>
+      </div>
+      <div class="hierarchy-arrow">&#x25B6;</div>
+      <div class="h-level h-guia">
+        <div class="h-level-icon">&#x1F4D0;</div>
+        <div class="h-level-title">Nivel 2: GUIA TECNICA</div>
+        <div class="h-level-desc">ISO 14025, EN 16139, EN 717-1, EN 14749, c-PCR-021 (furniture), GS1 Digital Link, EU Ecolabel. Referencia de facto, no vinculante legalmente.</div>
+        <div class="h-level-badge">Recomendado</div>
+      </div>
+      <div class="hierarchy-arrow">&#x25B6;</div>
+      <div class="h-level h-solucion">
+        <div class="h-level-icon">&#x1F6E0;&#xFE0F;</div>
+        <div class="h-level-title">Nivel 3: SOLUCION PROPIA</div>
+        <div class="h-level-desc">Implementacion especifica: Trackline, visor DPP Mueble, modelo de datos 42+6, mapping a ERP/PLM, control de acceso. Propuesta de Code Contract.</div>
+        <div class="h-level-badge">Implementacion</div>
+      </div>
+    </div>
+    <div class="hierarchy-note">
+      Cada documento enlazado esta marcado con su nivel: <span style="color:#1d4ed8;font-weight:700">LEY</span> (azul), <span style="color:#065f46;font-weight:700">GUIA</span> (verde), <span style="color:#92400e;font-weight:700">SOLUCION</span> (amarillo). Los enlaces morados son recursos externos de terceros.
+    </div>
+  </div>
+</div>
+
+<div class="impl-timeline">
+  <div class="impl-timeline-box">
+    <h3>Calendario de implementacion del DPP de Mueble</h3>
+    <table class="tl-table">
+      <thead>
+        <tr><th>Fecha</th><th>Hito</th><th>Quien publica / actua</th><th>Estado</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tl-date-cell">Jul 2024</td>
+          <td><div class="tl-milestone">Publicacion del ESPR (UE) 2024/1781 en el DOUE</div><div class="tl-publisher">Art. 80 ESPR &mdash; entrada en vigor 18 jul 2024</div></td>
+          <td class="tl-publisher">Parlamento Europeo y Consejo</td>
+          <td><span class="tl-status-badge tl-past">En vigor</span></td>
+        </tr>
+        <tr>
+          <td class="tl-date-cell">Mar 2025</td>
+          <td><div class="tl-milestone">Publicacion del ESPR Working Plan 2025-2030</div><div class="tl-publisher">Establece grupos de adopcion por categoria de producto. Mueble incluido en Grupo 2.</div></td>
+          <td class="tl-publisher">Comision Europea (DG GROW)</td>
+          <td><span class="tl-status-badge tl-past">Publicado</span></td>
+        </tr>
+        <tr>
+          <td class="tl-date-cell">30 Jun 2026</td>
+          <td><div class="tl-milestone">Diligencia debida EUDR aplicable</div><div class="tl-publisher">Geolocalizacion de parcela forestal + declaracion de no deforestacion. Aplica a todo mueble con madera.</div></td>
+          <td class="tl-publisher">Fabricantes + proveedores madera</td>
+          <td><span class="tl-status-badge tl-upcoming">Proximo</span></td>
+        </tr>
+        <tr>
+          <td class="tl-date-cell">19 Jul 2026</td>
+          <td><div class="tl-milestone">Apertura del Registro Central DPP</div><div class="tl-publisher">Art. 13 ESPR. Registro de identificadores unicos, operador economico, codigo de mercancia y URL del DPP.</div></td>
+          <td class="tl-publisher">Comision Europea (infraestructura)</td>
+          <td><span class="tl-status-badge tl-upcoming">Proximo</span></td>
+        </tr>
+        <tr>
+          <td class="tl-date-cell">6 Ago 2026</td>
+          <td><div class="tl-milestone">Nuevo limite EN 717-1 formaldehido 0,062 mg/m&sup3;</div><div class="tl-publisher">Reg. (UE) 2023/1464. Aplica a tableros derivados (MDF, aglomerado, contrachapado) y adhesivos.</div></td>
+          <td class="tl-publisher">Fabricantes (ensayo acreditado)</td>
+          <td><span class="tl-status-badge tl-upcoming">Proximo</span></td>
+        </tr>
+        <tr>
+          <td class="tl-date-cell">2026-2027</td>
+          <td><div class="tl-milestone">Trabajos preparatorios acto delegado sectorial de mueble</div><div class="tl-publisher">Consulta publica, estudios de impacto, borrador de requisitos especificos por familia.</div><div class="tl-da-note">Pendiente publicacion de la Comision</div></td>
+          <td class="tl-publisher">Comision Europea + EFIC + EFCG</td>
+          <td><span class="tl-status-badge tl-upcoming">En preparacion</span></td>
+        </tr>
+        <tr>
+          <td class="tl-date-cell">2027-2028</td>
+          <td><div class="tl-milestone">Acto delegado especifico de mueble previsto</div><div class="tl-publisher">Requisitos de ecodiseno y contenido del DPP por familia. Aplicacion progresiva tras adopcion + plazo transitorio.</div><div class="tl-da-note">Pendiente acto delegado</div></td>
+          <td class="tl-publisher">Comision Europea</td>
+          <td><span class="tl-status-badge tl-future">Critico</span></td>
+        </tr>
+        <tr>
+          <td class="tl-date-cell">Ago 2027</td>
+          <td><div class="tl-milestone">Aplicacion CS3D (Reg. (UE) 2024/1760)</div><div class="tl-publisher">Diligencia debida en cadena de suministro. Aplicacion progresiva por tamano de empresa.</div></td>
+          <td class="tl-publisher">Fabricantes (segun tamano)</td>
+          <td><span class="tl-status-badge tl-future">Futuro</span></td>
+        </tr>
+        <tr>
+          <td class="tl-date-cell">2028+</td>
+          <td><div class="tl-milestone">DPP de mueble obligatorio (estimado)</div><div class="tl-publisher">Tras periodo transitorio del acto delegado. El DPP debe estar accesible via data carrier y registrado antes de la primera comercializacion.</div></td>
+          <td class="tl-publisher">Fabricantes (DPP completo)</td>
+          <td><span class="tl-status-badge tl-future">Futuro</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="impl-timeline-note">
+      Las fechas del acto delegado sectorial de mueble dependen del calendario que la Comision publicara. Las obligaciones transversales (Registro Central, formaldehido, EUDR) aplican antes y con plazos fijos en la regulacion.
+    </div>
+  </div>
+</div>
+
+<div class="waves-box">
+  <div class="waves">
+    <h3>Grupos del ESPR Working Plan 2025-2030</h3>
+    <div class="waves-grid">
+      <div class="wave-card wave-1">
+        <h4>Grupo 1</h4>
+        <div class="wave-year">2025-2026</div>
+        <p><strong>Textiles (vestimenta), hierro y acero, aluminio, neumaticos.</strong> Mayor madurez de actos delegados. Sirven de referencia para anticipar requisitos del mueble.</p>
+      </div>
+      <div class="wave-card wave-2 wave-current">
+        <h4>Grupo 2 &mdash; Mueble</h4>
+        <div class="wave-year">2026-2028</div>
+        <p><strong>MUEBLE, colchones, productos quimicos, lubricantes, pinturas, detergentes, calzado.</strong> Acto delegado sectorial previsto en este grupo. Preparacion inmediata recomendada.</p>
+      </div>
+      <div class="wave-card wave-3">
+        <h4>Grupo 3</h4>
+        <div class="wave-year">2028-2030</div>
+        <p><strong>Productos intermedios, plasticos y polimeros, ICT (electronica), productos de papel.</strong> Aplica indirectamente a componentes del mueble (espumas, tableros, herrajes).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="families-box">
+  <div class="families">
+    <h3>Guia rapida por familia de mueble</h3>
+    <p>Haz clic en cada familia para ver detalle. Todas las familias estan en el Grupo 2 del Working Plan (acto delegado previsto 2027-2028).</p>
+    <div class="families-grid">
+
+      <div class="fam-card" onclick="this.classList.toggle('expanded')">
+        <h4>&#x1FA91; Asientos uso no domestico</h4>
+        <div class="fam-wave">Grupo 2</div>
+        <div class="fam-norm">EN 16139 (L1/L2/L3), EN 1335 (oficina)</div>
+        <div class="fam-risk">&#x26A0; No correspondencia modelo ensayado vs vendido</div>
+        <div class="fam-expand">&#x25BC; Ver detalle</div>
+        <div class="fam-detail">
+          <strong>PCR ambiental:</strong> ISO 14025 + c-PCR-021 (furniture)<br>
+          <strong>Enfoque DPP:</strong> Gobernar por modelo + variante de configuracion (tejido, espuma, herrajes) + reglas de compatibilidad. GTIN a nivel de modelo. Roles minimos: responsable de producto, responsable ensayos EN 16139/EN 1335, compras tejidos/espumas, propietario dato maestro.<br>
+          <strong>Riesgo:</strong> Configurador comercial y DPP deben compartir las mismas restricciones tecnicas y bloquear configuraciones no respaldadas por ensayo.
+        </div>
+      </div>
+
+      <div class="fam-card" onclick="this.classList.toggle('expanded')">
+        <h4>&#x1F6CB; Asientos uso domestico</h4>
+        <div class="fam-wave">Grupo 2</div>
+        <div class="fam-norm">EN 12520, EN 12521</div>
+        <div class="fam-risk">&#x26A0; Tejidos: SVHC, OEKO-TEX</div>
+        <div class="fam-expand">&#x25BC; Ver detalle</div>
+        <div class="fam-detail">
+          <strong>PCR ambiental:</strong> ISO 14025 + c-PCR-021<br>
+          <strong>Enfoque DPP:</strong> Si polivalente (domestico + contract), aplicar EN 16139 para reforzar durabilidad. Documentar tejido OEKO-TEX, espuma PU (Reg. 2020/1149 diisocianatos), origen madera (EUDR).<br>
+          <strong>Clave:</strong> El segmento residencial pide menos certificaciones pero el DPP es palanca diferencial frente a competencia low-cost.
+        </div>
+      </div>
+
+      <div class="fam-card" onclick="this.classList.toggle('expanded')">
+        <h4>&#x1F37D; Mesas</h4>
+        <div class="fam-wave">Grupo 2</div>
+        <div class="fam-norm">EN 15372 (no domestico), EN 12521 (domestico)</div>
+        <div class="fam-risk">&#x26A0; Formaldehido tableros &mdash; plazo 6/8/2026</div>
+        <div class="fam-expand">&#x25BC; Ver detalle</div>
+        <div class="fam-detail">
+          <strong>PCR ambiental:</strong> ISO 14025 + c-PCR-021<br>
+          <strong>Enfoque DPP:</strong> Estabilidad y durabilidad (EN 15372 no domestico), emisiones del tablero (EN 717-1 formaldehido, COV), origen madera (EUDR). Para contract/oficina: asociar EPD al modelo principal y declarar variantes por tamano/acabado en el mismo DPP.<br>
+          <strong>Clave:</strong> El nuevo limite formaldehido 0,062 mg/m&sup3; (06/08/2026) afecta cualquier mesa con tablero derivado.
+        </div>
+      </div>
+
+      <div class="fam-card" onclick="this.classList.toggle('expanded')">
+        <h4>&#x1F4E6; Almacenaje</h4>
+        <div class="fam-wave">Grupo 2</div>
+        <div class="fam-norm">EN 14749 (domestico), EN 16121 (oficina)</div>
+        <div class="fam-risk">&#x26A0; Muchos SKUs, pobre disciplina de datos</div>
+        <div class="fam-expand">&#x25BC; Ver detalle</div>
+        <div class="fam-detail">
+          <strong>PCR ambiental:</strong> ISO 14025 + c-PCR-021<br>
+          <strong>Enfoque DPP:</strong> Tres normas (EN 14749 domestico, EN 16121 oficina, EN 1335 si modulos auxiliares). Reto organizativo: muchos SKUs con poca disciplina de datos. Mitigacion: gobernar por familia industrial con reglas de configuracion, no producto a producto.<br>
+          <strong>Clave:</strong> Tableros derivados (MDF, aglomerado, contrachapado) son la fuente principal de emisiones. EN 717-1 practicamente obligado.
+        </div>
+      </div>
+
+      <div class="fam-card" onclick="this.classList.toggle('expanded')">
+        <h4>&#x1F3E2; Mueble oficina y contract</h4>
+        <div class="fam-wave">Grupo 2</div>
+        <div class="fam-norm">EN 1335, EN 12727, EN 16121</div>
+        <div class="fam-risk">&#x26A0; Certificaciones (Greenguard, EU Ecolabel) son requisito licitacion</div>
+        <div class="fam-expand">&#x25BC; Ver detalle</div>
+        <div class="fam-detail">
+          <strong>PCR ambiental:</strong> ISO 14025 + c-PCR-021<br>
+          <strong>Enfoque DPP:</strong> Exigencias contractuales mas altas: Greenguard, OEKO-TEX, EU Ecolabel frecuentemente requisito de licitacion publica y corporativa. El DPP debe incluir todas las certificaciones con numero y vigencia. Capa reparabilidad (recambios, manual, plazo post-venta) como valor diferencial.<br>
+          <strong>Clave:</strong> El operador economico que figura en el DPP es el fabricante o representante autorizado UE, no el distribuidor.
+        </div>
+      </div>
+
+      <div class="fam-card" onclick="this.classList.toggle('expanded')">
+        <h4>&#x1F6CF; Descanso (colchones)</h4>
+        <div class="fam-wave">Grupo 2</div>
+        <div class="fam-norm">EN 1957 (durabilidad), EN 597 (fuego)</div>
+        <div class="fam-risk">&#x26A0; Diisocianatos PU, retardantes de llama, EoL dificil</div>
+        <div class="fam-expand">&#x25BC; Ver detalle</div>
+        <div class="fam-detail">
+          <strong>PCR ambiental:</strong> ISO 14025 + PCR especifica colchones<br>
+          <strong>Enfoque DPP:</strong> Riesgo quimico alto: espumas PU (Reg. 2020/1149, formacion obligatoria operarios), retardantes de llama (REACH Anexo XVII), barrera de fuego (EN 597). El DPP debe integrar composicion por capa, declaracion diisocianatos libres, certificados de retardantes.<br>
+          <strong>Clave:</strong> Fin de vida sensible. El DPP es palanca para mejorar trazabilidad y facilitar el desensamblaje.
+        </div>
+      </div>
+
+      <div class="fam-card" onclick="this.classList.toggle('expanded')">
+        <h4>&#x1F476; Mueble infantil</h4>
+        <div class="fam-wave">Grupo 2</div>
+        <div class="fam-norm">EN 716, EN 1130, EN 71-3</div>
+        <div class="fam-risk">&#x26A0; Migracion metales pesados, REACH reforzado</div>
+        <div class="fam-expand">&#x25BC; Ver detalle</div>
+        <div class="fam-detail">
+          <strong>PCR ambiental:</strong> ISO 14025 + c-PCR-021<br>
+          <strong>Enfoque DPP:</strong> Exigencias de seguridad reforzadas: EN 716 (cunas), EN 1130 (cunas de viaje), EN 71-3 (migracion de metales pesados desde superficies). El DPP debe declarar explicitamente la conformidad y el ensayo de migracion. REACH y CLP especialmente criticos por exposicion de menores.<br>
+          <strong>Clave:</strong> Trazabilidad de pinturas y barnices con declaracion del proveedor.
+        </div>
+      </div>
+
+      <div class="fam-card" onclick="this.classList.toggle('expanded')">
+        <h4>&#x1F33F; Mueble exterior y jardin</h4>
+        <div class="fam-wave">Grupo 2</div>
+        <div class="fam-norm">EN 581 (mesas y sillas exterior)</div>
+        <div class="fam-risk">&#x26A0; Madera tropical EUDR, aluminio huella carbono</div>
+        <div class="fam-expand">&#x25BC; Ver detalle</div>
+        <div class="fam-detail">
+          <strong>PCR ambiental:</strong> ISO 14025 + c-PCR-021<br>
+          <strong>Enfoque DPP:</strong> Durabilidad meteorologica (EN 581). Restricciones especificas: madera tropical (EUDR, FSC/PEFC obligado), aluminio (huella alta, reciclado posible alto), polimeros tejidos (HDPE, PET) con restricciones REACH para aditivos y estabilizantes UV.<br>
+          <strong>Clave:</strong> Importancia de declarar % reciclado en aluminio y origen geografico de la madera.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-dot" style="background:#dbeafe;border:1px solid #1d4ed8"></span>LEY: Normativa oficial (ESPR, REACH, EUDR, actos delegados)</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#d1fae5;border:1px solid #065f46"></span>GUIA: Referencia tecnica (ISO 14025, EN 16139, GS1 Digital Link)</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#fef3c7;border:1px solid #92400e"></span>SOLUCION: Implementacion propia (Trackline, visor DPP)</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#e9d5ff;border:1px solid #6b21a8"></span>Recurso externo (terceros)</div>
+</div>
+
+<div class="container">
+
+<!-- FASE 1 -->
+<div class="phase phase-amber">
+  <div class="phase-header" onclick="togglePhase(this)">
+    <div class="phase-number">1</div>
+    <div class="phase-info">
+      <h2>Entender el marco regulatorio <span class="phase-status ps-partial">En curso</span></h2>
+      <p>Conocer que exige el ESPR 2024/1781, donde encaja el mueble en el Working Plan, y que obligaciones transversales (REACH, EUDR, formaldehido) ya aplican</p>
+    </div>
+    <div class="phase-deadline">Conocimiento base</div>
+    <div class="phase-chevron">&#x25BC;</div>
+  </div>
+  <div class="phase-body">
+
+    <div class="step">
+      <div class="step-icon">&#x1F4DC;</div>
+      <div class="step-content">
+        <h3>Leer el Reglamento ESPR (UE) 2024/1781</h3>
+        <p>El texto legal completo. Articulos clave: <strong>Arts. 9-11</strong> (DPP, soporte de datos), <strong>Art. 10</strong> (acceso por rol), <strong>Art. 13</strong> (Registro Central), <strong>Arts. 7-8</strong> (requisitos ecodiseno), <strong>Anexo III</strong> (informacion del DPP). Marco horizontal aplicable a categorias priorizadas mediante actos delegados.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEY:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj" target="_blank">&#x1F517; ESPR 2024/1781 (EUR-Lex)</a>
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:32024R1781" target="_blank">&#x1F517; Texto en espanol</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F4CB;</div>
+      <div class="step-content">
+        <h3>Identificar tu posicion en el ESPR Working Plan 2025-2030</h3>
+        <p>La Comision publico el primer Working Plan en marzo 2025 que organiza las categorias de producto en grupos de adopcion. <strong>Mueble esta en el Grupo 2 (2026-2028)</strong> junto a colchones, productos quimicos, lubricantes, pinturas, detergentes y calzado. El acto delegado sectorial de mueble se preve para 2027-2028.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEY:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/14304-Ecodesign-for-Sustainable-Products-Regulation-Working-Plan-2025-2030_en" target="_blank">&#x1F517; ESPR Working Plan 2025-2030 (DG GROW)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x23F0;</div>
+      <div class="step-content">
+        <h3>Plazos transversales que ya aplican al mueble</h3>
+        <p>Aunque el acto delegado sectorial llegara en 2027-2028, hay obligaciones que afectan al sector <strong>antes</strong>: <strong>19/07/2026</strong> apertura del Registro Central DPP, <strong>06/08/2026</strong> nuevo limite formaldehido EN 717-1 (Reg. (UE) 2023/1464), <strong>30/06/2026</strong> diligencia debida EUDR (Reg. (UE) 2023/1115) para todo mueble con madera. <strong>Ya en vigor:</strong> notificacion SCIP a ECHA, REACH Art. 33 (SVHC > 0,1%), formacion diisocianatos (Reg. (UE) 2020/1149).</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEY:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg_impl/2023/1464/oj" target="_blank">&#x1F517; Reg. 2023/1464 (formaldehido)</a>
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg/2023/1115/oj" target="_blank">&#x1F517; EUDR (UE) 2023/1115</a>
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:02006R1907-20240101" target="_blank">&#x1F517; REACH (texto consolidado)</a>
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg/2024/1760/oj" target="_blank">&#x1F517; CS3D 2024/1760</a>
+          </div>
+        </div>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">HERRAMIENTAS:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-external" href="https://echa.europa.eu/scip-database" target="_blank">&#x1F517; Base SCIP (ECHA)</a>
+            <a class="doc-link doc-external" href="https://echa.europa.eu/candidate-list-table" target="_blank">&#x1F517; Lista SVHC candidata</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F3D7;</div>
+      <div class="step-content">
+        <h3>Entender la arquitectura tecnica del DPP</h3>
+        <p>Como funciona el sistema: <strong>data carrier (QR)</strong> &rarr; <strong>identificador unico (GS1 Digital Link)</strong> &rarr; <strong>acceso al DPP</strong> &rarr; <strong>Registro Central UE</strong>. El estandar GS1 Digital Link es la referencia: formato base <code>https://id.gs1.org/01/{GTIN}</code>. A diferencia de construccion (CIRPASS-2), el mueble no tiene un proyecto piloto UE de calibre equivalente &mdash; ventana de oportunidad para fabricantes pioneros.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">GUIA TECNICA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-guia" href="https://www.gs1.org/standards/gs1-digital-link" target="_blank">&#x1F517; GS1 Digital Link (ISO/IEC 18975)</a>
+            <a class="doc-link doc-guia" href="https://www.gs1es.org/" target="_blank">&#x1F517; GS1 Spain (alta y prefijo)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F4A1;</div>
+      <div class="step-content">
+        <h3>Entender el valor de negocio</h3>
+        <p>No es solo cumplimiento: el DPP aporta ventaja competitiva en licitaciones (especialmente contract y oficina), simplifica la prescripcion, refuerza certificaciones (EU Ecolabel, Greenguard, OEKO-TEX) y prepara para mercados que ya piden trazabilidad. <strong>Una pyme con EPD verificada parte cubriendo el 40-60% del DPP futuro.</strong> Los fabricantes pioneros marcaran la practica y tendran voz en la estandarizacion sectorial.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">REFERENCIAS SECTORIALES:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-external" href="https://efic.eu/" target="_blank">&#x1F517; EFIC (European Furniture)</a>
+            <a class="doc-link doc-external" href="https://www.anieme.com/" target="_blank">&#x1F517; ANIEME (Espana)</a>
+            <a class="doc-link doc-external" href="https://habic.org/" target="_blank">&#x1F517; Habic / Basque Living</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F1EA;&#x1F1F8;</div>
+      <div class="step-content">
+        <h3>Conocer la legislacion espanola aplicable</h3>
+        <p>Ademas de la normativa UE, en Espana aplican: <strong>Ley 7/2022</strong> (residuos y economia circular &mdash; mueble incluido en regimen RAP en desarrollo), <strong>RD 110/2015</strong> (RAEE, aplica a mueble electronico, mesas elevables), normativa CCAA sobre punto limpio y recogida selectiva. El mueble no esta cubierto por el CPR (eso es construccion) ni por el Reglamento Maquinas (eso es equipos).</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEGISLACION ESPANOLA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809" target="_blank">&#x1F517; Ley 7/2022 (BOE)</a>
+            <a class="doc-link doc-normativa" href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-1762" target="_blank">&#x1F517; RD 110/2015 RAEE (BOE)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FASE 2 -->
+<div class="phase phase-red">
+  <div class="phase-header collapsed" onclick="togglePhase(this)">
+    <div class="phase-number">2</div>
+    <div class="phase-info">
+      <h2>Mapear tus datos actuales <span class="phase-status ps-pending">Pendiente</span></h2>
+      <p>Identificar que datos ya tienes, cuales faltan, y quien los genera en cada departamento</p>
+    </div>
+    <div class="phase-deadline">Meses 1-3</div>
+    <div class="phase-chevron">&#x25BC;</div>
+  </div>
+  <div class="phase-body hidden">
+
+    <div class="step">
+      <div class="step-icon">&#x1F50D;</div>
+      <div class="step-content">
+        <h3>Auditoria de datos: los 42+6 atributos del DPP de mueble</h3>
+        <p>Cruzar cada campo requerido con tu informacion real. Las 10 secciones funcionales: <strong>Identificacion, Materiales/BOM, Seguridad quimica, Huella de carbono, Durabilidad, Reparabilidad, Desmontaje/circularidad, Embalaje, Cadena de suministro, Conformidad/digital</strong>. Mas los 6 campos del Registro Central (Art. 13): identificador unico, operador economico, codigo CN, URL del DPP, estado registro, soporte de datos.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-solucion">SOLUCION PROPIA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-interno" href="https://codecontract-dpp.github.io/dpp-furniture-passport/" target="_blank">&#x1F517; Modelo de datos 42+6 (visor demo)</a>
+            <a class="doc-link doc-interno" href="mailto:adkady@gmail.com?subject=Consulta%20DPP%20Mueble%20-%20Mapping%20campos">&#x1F4E9; Mapping campos DPP Mueble &mdash; solicitar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F4CA;</div>
+      <div class="step-content">
+        <h3>Clasificar cada campo por estado</h3>
+        <p>Marcar cada atributo como: <strong>Verificado</strong> (en EPD u otro doc verificado), <strong>Parcial</strong> (existe pero generico o desactualizado), <strong>Pendiente</strong> (no existe, requiere recogida nueva), <strong>Proveedor</strong> (depende de datos upstream de cadena de suministro). Priorizar por plazos transversales (formaldehido, EUDR, SCIP) y por Registro Central Art. 13.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-solucion">SOLUCION PROPIA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-interno" href="mailto:adkady@gmail.com?subject=Consulta%20DPP%20Mueble%20-%20Plantilla%20auditoria">&#x1F4E9; Plantilla Excel de auditoria &mdash; solicitar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F3ED;</div>
+      <div class="step-content">
+        <h3>Identificar responsables por departamento</h3>
+        <p>Quien genera cada dato? <strong>I+D / Oficina tecnica:</strong> BOM, dimensiones, fichas, instrucciones. <strong>Produccion:</strong> planta, lote, fecha, parametros. <strong>Calidad:</strong> ensayos EN, liberacion de lote, certificaciones. <strong>Compras:</strong> proveedores, FSC/PEFC, FDS, % reciclado. <strong>Sostenibilidad:</strong> EPD, ACV. <strong>Legal:</strong> REACH, SCIP, EUDR. <strong>Comercial:</strong> nombre comercial, fotos, configurador. <strong>Post-venta:</strong> recambios, garantia, manual reparacion.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-solucion">SOLUCION PROPIA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-interno" href="mailto:adkady@gmail.com?subject=Consulta%20DPP%20Mueble%20-%20Mapa%20datos%20departamento">&#x1F4E9; Mapa de datos por departamento &mdash; solicitar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FASE 3 -->
+<div class="phase phase-amber">
+  <div class="phase-header collapsed" onclick="togglePhase(this)">
+    <div class="phase-number">3</div>
+    <div class="phase-info">
+      <h2>Completar los datos obligatorios <span class="phase-status ps-pending">Pendiente</span></h2>
+      <p>Realizar el ACV/EPD, ensayos pendientes (formaldehido, COV), declaraciones REACH/SCIP/EUDR y recopilacion de proveedores</p>
+    </div>
+    <div class="phase-deadline">Meses 3-12</div>
+    <div class="phase-chevron">&#x25BC;</div>
+  </div>
+  <div class="phase-body hidden">
+
+    <div class="step">
+      <div class="step-icon">&#x1F30D;</div>
+      <div class="step-content">
+        <h3>EPD/DAP verificada segun ISO 14025 + c-PCR-021</h3>
+        <p>Calcular ACV del producto segun ISO 14040/14044 y publicar EPD bajo un programa reconocido. Para mueble: <strong>EPD International (c-PCR-021 furniture)</strong>, <strong>AENOR GlobalEPD</strong>, <strong>IBU</strong>. Verificacion tercera parte por organismo acreditado ENAC (en Espana: TECNALIA, AENOR). La EPD cubre tipicamente <strong>40-60% del DPP</strong>: huella de carbono (GWP), energia primaria, BOM, % reciclado, fin de vida.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">GUIA TECNICA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-guia" href="https://www.environdec.com/" target="_blank">&#x1F517; EPD International</a>
+            <a class="doc-link doc-guia" href="https://www.aenor.com/certificacion/producto/declaraciones-ambientales" target="_blank">&#x1F517; AENOR GlobalEPD</a>
+            <a class="doc-link doc-guia" href="https://ibu-epd.com/" target="_blank">&#x1F517; IBU (Alemania)</a>
+            <a class="doc-link doc-guia" href="https://www.environdec.com/pcr-library" target="_blank">&#x1F517; Biblioteca de PCR (EPD Int.)</a>
+          </div>
+        </div>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">SOFTWARE ACV:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-external" href="https://simapro.com/" target="_blank">&#x1F517; SimaPro</a>
+            <a class="doc-link doc-external" href="https://www.openlca.org/" target="_blank">&#x1F517; openLCA (gratuito)</a>
+            <a class="doc-link doc-external" href="https://sphera.com/life-cycle-assessment-lca-software/" target="_blank">&#x1F517; GaBi/Sphera</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F9EA;</div>
+      <div class="step-content">
+        <h3>Ensayos pendientes: formaldehido, COV, durabilidad</h3>
+        <p><strong>EN 717-1 (formaldehido):</strong> ensayo en camara, nuevo limite 0,062 mg/m&sup3; desde 06/08/2026. Obligado para tableros derivados. <strong>EN 16516 / ISO 16000 (COV):</strong> ensayo de emisiones de compuestos volatiles, especialmente relevante en barnices/pinturas. <strong>Durabilidad:</strong> EN 16139 (asientos no domestico), EN 1335 (oficina), EN 14749 (almacenaje), EN 15372 (mesas), EN 1957 (colchones). Laboratorios espanoles de referencia: <strong>AIDIMME, ITENE, TECNALIA, LEITAT</strong>.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEY:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg_impl/2023/1464/oj" target="_blank">&#x1F517; Reg. 2023/1464 (formaldehido)</a>
+          </div>
+        </div>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">LABORATORIOS:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-external" href="https://www.aidimme.es/" target="_blank">&#x1F517; AIDIMME (mueble)</a>
+            <a class="doc-link doc-external" href="https://www.tecnalia.com/" target="_blank">&#x1F517; TECNALIA</a>
+            <a class="doc-link doc-external" href="https://www.leitat.org/" target="_blank">&#x1F517; LEITAT</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x2697;</div>
+      <div class="step-content">
+        <h3>Declaraciones REACH, SCIP, diisocianatos</h3>
+        <p>Si el producto contiene <strong>SVHC > 0,1% p/p</strong> (consulta lista candidata ECHA), debes comunicar informacion suficiente para uso seguro (REACH Art. 33) y notificar a la base <strong>SCIP de ECHA</strong> (gratuito). Especialmente critico para: tapizado (espumas, retardantes), barnices, adhesivos, herrajes con cromado. Si usas <strong>espuma de poliuretano</strong>, los operarios necesitan <strong>certificado de formacion de diisocianatos</strong> (Reg. 2020/1149) desde 2023.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEY:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:02006R1907-20240101" target="_blank">&#x1F517; REACH (texto consolidado)</a>
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg/2020/1149/oj" target="_blank">&#x1F517; Reg. 2020/1149 (diisocianatos)</a>
+          </div>
+        </div>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">HERRAMIENTAS:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-external" href="https://echa.europa.eu/scip-database" target="_blank">&#x1F517; Notificacion SCIP (ECHA)</a>
+            <a class="doc-link doc-external" href="https://echa.europa.eu/candidate-list-table" target="_blank">&#x1F517; Lista candidata SVHC</a>
+            <a class="doc-link doc-external" href="https://www.safeusediisocyanates.eu/" target="_blank">&#x1F517; Formacion diisocianatos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F333;</div>
+      <div class="step-content">
+        <h3>EUDR: trazabilidad de la madera con geolocalizacion</h3>
+        <p>Desde el <strong>30/06/2026</strong>, todo producto con madera puesto en mercado UE necesita: (1) declaracion de diligencia debida del operador, (2) geolocalizacion de la parcela forestal, (3) trazabilidad de proveedor hasta origen. <strong>Certificacion FSC/PEFC</strong> no sustituye a la declaracion pero es la herramienta operativa mas robusta. Exigir al proveedor: numero de licencia FSC/PEFC, geolocalizacion (lat/lon), especie, fecha de tala.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEY:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg/2023/1115/oj" target="_blank">&#x1F517; EUDR Reg. 2023/1115</a>
+          </div>
+        </div>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">CERTIFICACION:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-external" href="https://es.fsc.org/" target="_blank">&#x1F517; FSC Espana</a>
+            <a class="doc-link doc-external" href="https://www.pefc.es/" target="_blank">&#x1F517; PEFC Espana</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x2705;</div>
+      <div class="step-content">
+        <h3>Certificaciones voluntarias relevantes</h3>
+        <p>Etiquetas que anticipan exigencias futuras del DPP y son requisito de facto en licitaciones contract/publica: <strong>EU Ecolabel</strong> (Decision 2016/1332 mobiliario), <strong>OEKO-TEX Standard 100</strong> (tejidos y cuero), <strong>Greenguard / Greenguard Gold</strong> (COV bajos), <strong>FSC/PEFC</strong> (madera), <strong>Cradle to Cradle</strong> (circularidad), <strong>ISO 14006</strong> (ecodiseno). Cada certificacion debe incluir en el DPP: nombre, numero, organismo y vigencia.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">CERTIFICACIONES:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-external" href="https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel_en" target="_blank">&#x1F517; EU Ecolabel</a>
+            <a class="doc-link doc-external" href="https://www.oeko-tex.com/" target="_blank">&#x1F517; OEKO-TEX</a>
+            <a class="doc-link doc-external" href="https://www.ul.com/services/greenguard-certification" target="_blank">&#x1F517; Greenguard</a>
+            <a class="doc-link doc-external" href="https://c2ccertified.org/" target="_blank">&#x1F517; Cradle to Cradle</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FASE 4 -->
+<div class="phase phase-blue">
+  <div class="phase-header collapsed" onclick="togglePhase(this)">
+    <div class="phase-number">4</div>
+    <div class="phase-info">
+      <h2>Digitalizar: construir el DPP <span class="phase-status ps-pending">Pendiente</span></h2>
+      <p>Estructurar los datos, generar identificadores GS1, implementar el QR y el control de acceso</p>
+    </div>
+    <div class="phase-deadline">Meses 6-12</div>
+    <div class="phase-chevron">&#x25BC;</div>
+  </div>
+  <div class="phase-body hidden">
+
+    <div class="step">
+      <div class="step-icon">&#x1F5C2;</div>
+      <div class="step-content">
+        <h3>Estructurar datos segun modelo DPP 42+6</h3>
+        <p>Convertir documentos en campos estructurados. Para cada atributo, capturar: <strong>valor + estado + base juridica + documento fuente + evidencia</strong>. Formato JSON-LD recomendado para interoperabilidad. Versionado obligatorio: cada cambio genera nueva version del DPP con timestamp. ERP/PLM como fuente unica de verdad, DPP como capa de publicacion.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-solucion">SOLUCION PROPIA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-interno" href="https://codecontract-dpp.github.io/dpp-furniture-passport/" target="_blank">&#x1F517; Visor DPP Mueble (demo)</a>
+            <a class="doc-link doc-interno" href="https://codecontract-dpp.github.io/dpp-furniture-passport/?id=hari-chair" target="_blank">&#x1F517; Ejemplo Silla HARI (EPD real)</a>
+            <a class="doc-link doc-interno" href="https://codecontract-dpp.github.io/dpp-furniture-passport/edit.html" target="_blank">&#x1F517; Editor DPP</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F4F2;</div>
+      <div class="step-content">
+        <h3>Alta GS1 y generacion de QR Digital Link</h3>
+        <p><strong>Paso 1:</strong> alta como socio de GS1 Spain (cuota anual desde ~200&euro;, escalada por facturacion). <strong>Paso 2:</strong> GS1 asigna prefijo de empresa. <strong>Paso 3:</strong> asignas GTIN a cada modelo (granularidad recomendada). <strong>Paso 4:</strong> generas QR con formato GS1 Digital Link: <code>https://id.gs1.org/01/{GTIN}</code>. <strong>Paso 5:</strong> imprimes y colocas en producto o embalaje. El QR resuelve al DPP via tu URL persistente.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-guia">GUIA TECNICA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-guia" href="https://www.gs1.org/standards/gs1-digital-link" target="_blank">&#x1F517; GS1 Digital Link Standard</a>
+            <a class="doc-link doc-guia" href="https://www.gs1es.org/hazte-socio/" target="_blank">&#x1F517; Alta GS1 Spain</a>
+          </div>
+        </div>
+        <div class="doc-group">
+          <div class="doc-group-label dg-solucion">SOLUCION PROPIA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-interno" href="https://codecontract-dpp.github.io/dpp-furniture-passport/qr.html" target="_blank">&#x1F517; Generador QR Digital Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F510;</div>
+      <div class="step-content">
+        <h3>Implementar control de acceso por roles (RBAC)</h3>
+        <p>El DPP tiene acceso diferenciado (Art. 10 ESPR): <strong>datos publicos</strong> (consumidor: identificacion, durabilidad, certificaciones, EPD), <strong>datos profesionales</strong> (reciclador, reparador: desmontaje, recambios, manuales, composicion), <strong>datos restringidos</strong> (autoridad: cadena de suministro, declaracion REACH, base juridica, evidencia). Implementar tres vistas en el visor + sistema de autenticacion para roles profesionales y de autoridad.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEY:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj" target="_blank">&#x1F517; ESPR Art. 10 (acceso por rol)</a>
+          </div>
+        </div>
+        <div class="doc-group">
+          <div class="doc-group-label dg-solucion">SOLUCION PROPIA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-interno" href="mailto:adkady@gmail.com?subject=Consulta%20DPP%20Mueble%20-%20Control%20acceso">&#x1F4E9; Diseno RBAC para DPP Mueble &mdash; solicitar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x26D3;</div>
+      <div class="step-content">
+        <h3>Registrar evidencia y trazabilidad del dato</h3>
+        <p>El ESPR (Art. 9.4) exige que la informacion del DPP sea <strong>exacta, completa, actualizada e interoperable</strong>. Cada dato del pasaporte debe registrar: quien lo aporto, cuando, que documento lo soporta, hash de integridad del dataset. La <strong>blockchain</strong> es una opcion para reforzar la inmutabilidad, pero la obligacion es la trazabilidad en si, independientemente de la tecnologia.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-solucion">SOLUCION PROPIA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-interno" href="https://trackline.codecontract.com" target="_blank">&#x1F517; Trackline by Code Contract</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FASE 5 -->
+<div class="phase phase-purple">
+  <div class="phase-header collapsed" onclick="togglePhase(this)">
+    <div class="phase-number">5</div>
+    <div class="phase-info">
+      <h2>Verificar, registrar y poner en produccion <span class="phase-status ps-pending">Pendiente</span></h2>
+      <p>Validar conformidad, cargar identificadores en el Registro Central y activar el DPP en producto</p>
+    </div>
+    <div class="phase-deadline">Antes de comercializar</div>
+    <div class="phase-chevron">&#x25BC;</div>
+  </div>
+  <div class="phase-body hidden">
+
+    <div class="step">
+      <div class="step-icon">&#x1F9EA;</div>
+      <div class="step-content">
+        <h3>Piloto DPP por modelo representativo</h3>
+        <p>Producir un DPP completo end-to-end para 1-2 modelos representativos (tipicamente el de mayor volumen y el modelo bandera con EPD). Poblar todos los campos, generar QR, validar contra los 6 campos del Registro Central, probar resolucion del URI. Documentar incidencias y plan de escalado al resto del catalogo. <strong>Empresas con EPD verificada + ERP integrado: piloto en 8-12 semanas.</strong></p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-solucion">SOLUCION PROPIA:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-interno" href="https://codecontract-dpp.github.io/dpp-furniture-passport/?id=hari-chair" target="_blank">&#x1F517; Ejemplo Silla HARI (piloto real)</a>
+            <a class="doc-link doc-interno" href="https://codecontract-dpp.github.io/dpp-furniture-passport/?id=code-chair" target="_blank">&#x1F517; Ejemplo Silla CODE (demo)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F50E;</div>
+      <div class="step-content">
+        <h3>Validacion de cumplimiento Art. 13 (Registro-ready)</h3>
+        <p>Antes de cargar al Registro Central, validar que los 6 campos obligatorios estan completos: <strong>identificador unico (GTIN), operador economico (con NIF), codigo de mercancia (CN/TARIC), URL del DPP persistente, estado del registro, soporte de datos (QR Digital Link)</strong>. Sin estos 6, el Registro rechaza la carga. Recomendable validador automatico antes de cada despliegue.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F3DB;</div>
+      <div class="step-content">
+        <h3>Cargar identificadores en el Registro Central DPP</h3>
+        <p>El Art. 13 ESPR obliga a la Comision a crear el Registro antes del <strong>19/07/2026</strong>. El fabricante (operador economico) carga los identificadores unicos y metadatos del DPP <strong>antes de la primera comercializacion</strong>. El contenido completo del DPP se aloja en tu sistema o el de tu proveedor tecnologico, accesible via el data carrier. El registro es <strong>gratuito</strong>; el coste relevante es interno.</p>
+        <div class="doc-group">
+          <div class="doc-group-label dg-ley">LEY:</div>
+          <div class="doc-group-links">
+            <a class="doc-link doc-normativa" href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj" target="_blank">&#x1F517; ESPR Art. 12-13 (Registro)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">&#x1F504;</div>
+      <div class="step-content">
+        <h3>Mantener el DPP actualizado durante toda la vida util</h3>
+        <p>El DPP es un documento vivo. Actualizar cuando: cambia la formulacion, se renueva la EPD (cada 5 anos), cambia un proveedor critico, se publica nueva normativa o se incorporan datos de fin de vida. Establecer proceso de vigilancia regulatoria (alertas Working Plan ESPR, actos delegados, ECHA), revision anual de datos del DPP, y contribuir a grupos sectoriales (EFIC, ANIEME, Habic).</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- RESULT -->
+<div class="result-box">
+  <h2>&#x1F3AF; DPP de Mueble operativo</h2>
+  <p>Tu producto de mueble tiene un Pasaporte Digital completo, accesible via QR, conforme al ESPR 2024/1781, con datos verificados y cargado en el Registro Central de la UE</p>
+  <div class="result-items">
+    <div class="result-item">&#x1F4F2; QR Digital Link en producto</div>
+    <div class="result-item">&#x1F4CB; EPD verificada (ISO 14025)</div>
+    <div class="result-item">&#x1F333; EUDR + FSC/PEFC</div>
+    <div class="result-item">&#x2697; SCIP + REACH conformes</div>
+    <div class="result-item">&#x1F3DB; DPP en Registro UE</div>
+    <div class="result-item">&#x1F510; Acceso por roles (RBAC)</div>
+  </div>
+</div>
+
+</div><!-- /.container -->
+
+<!-- FAQ -->
+<div class="faq-box">
+  <div class="faq">
+    <div class="faq-title">&#x2754; Preguntas frecuentes sobre el DPP en mueble</div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-icon">&#x1F4AC;</span> El DPP de mueble ya es obligatorio hoy? <span class="faq-chevron">&#x25BC;</span></div>
+      <div class="faq-a">El marco ESPR (UE) 2024/1781 existe desde julio 2024 y crea la figura horizontal del DPP. El acto delegado especifico de mueble (que define que campos exactos y plazos por familia) <strong>no se ha publicado todavia</strong> &mdash; esta previsto en el Grupo 2 del Working Plan (2026-2028). Mientras tanto, <strong>si aplican obligaciones transversales</strong>: Registro Central (19/07/2026), nuevo limite formaldehido EN 717-1 (06/08/2026), diligencia debida EUDR (30/06/2026), notificacion SCIP y REACH (ya en vigor). Empezar ya = llegar preparado al acto delegado.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q collapsed" onclick="toggleFaq(this)"><span class="faq-icon">&#x1F4C4;</span> Puedo limitarme a subir PDFs como DPP? <span class="faq-chevron">&#x25BC;</span></div>
+      <div class="faq-a hidden">No. El ESPR exige que la informacion sea <strong>interoperable, basada en normas abiertas y legible por maquina</strong>. Un PDF no cumple esos requisitos. Los PDFs (EPD, ficha tecnica, certificado) pueden ser <strong>anexos enlazados</strong> desde el DPP, pero los datos estructurados deben extraerse a campos.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q collapsed" onclick="toggleFaq(this)"><span class="faq-icon">&#x1F30D;</span> Una EPD/DAP basta como DPP? <span class="faq-chevron">&#x25BC;</span></div>
+      <div class="faq-a hidden">No. La EPD cubre el bloque ambiental (tipicamente 40-60% del DPP de mueble: huella de carbono, BOM, % reciclado, fin de vida). El DPP debe integrar ademas: identificacion (operador economico, GTIN), durabilidad (ensayos EN), reparabilidad (recambios, manual), quimica (SCIP, REACH), cadena de suministro (EUDR), conformidad (certificaciones). La EPD es <strong>una pieza valiosa, no el puzzle completo</strong>.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q collapsed" onclick="toggleFaq(this)"><span class="faq-icon">&#x1F3ED;</span> Que gana una pyme si empieza ya? <span class="faq-chevron">&#x25BC;</span></div>
+      <div class="faq-a hidden">Cuatro cosas: (1) ordena documentacion que ya necesita para marcado CE, REACH y EPD; (2) evita rehacer datos cuando llegue la obligacion plena del acto delegado; (3) compite mejor en licitaciones publicas, contract y mercados nordicos/centroeuropeos que ya piden trazabilidad; (4) consolida la EPD verificada como activo reutilizable y posiciona la marca. La diferencia entre PYME y gran empresa no esta en el <em>que</em>, sino en el <em>como</em>: la PYME empieza por una familia piloto, la gran empresa con integracion multi-planta.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q collapsed" onclick="toggleFaq(this)"><span class="faq-icon">&#x2697;</span> El DPP de mueble debe incluir informacion quimica? <span class="faq-chevron">&#x25BC;</span></div>
+      <div class="faq-a hidden">Si. REACH Art. 33 exige comunicar SVHC > 0,1% p/p en articulos &mdash; obligacion <strong>transversal ya en vigor</strong>. Si el producto contiene SVHC, debe notificarse a la base SCIP de ECHA (gratuito). Especialmente critico en mueble por: barnices, adhesivos, espumas PU (con diisocianatos &mdash; Reg. 2020/1149), tejidos (retardantes de llama), herrajes con cromado. El modelo de datos del DPP debe prever esta capa <strong>desde el diseno</strong>.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q collapsed" onclick="toggleFaq(this)"><span class="faq-icon">&#x1F4F2;</span> Que estandar usar para el QR del DPP? <span class="faq-chevron">&#x25BC;</span></div>
+      <div class="faq-a hidden"><strong>GS1 Digital Link</strong> (ISO/IEC 18975) es el estandar de referencia promovido por el ESPR. Formato base: <code>https://id.gs1.org/01/{GTIN}</code>. Requiere alta en GS1 Spain (cuota anual desde ~200&euro;) y asignacion de GTIN. Granularidad recomendada para mueble: <strong>un GTIN por modelo</strong>, no por unidad. La extension Digital Link permite anadir lote, fecha o numero de serie si es necesario.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q collapsed" onclick="toggleFaq(this)"><span class="faq-icon">&#x1F4B0;</span> Cuanto cuesta implantar el DPP en mueble? <span class="faq-chevron">&#x25BC;</span></div>
+      <div class="faq-a hidden">El coste se divide en cuatro bloques: (1) <strong>Tecnologia</strong>: muy variable, desde ~3-5k&euro;/ano (plataforma cloud lista) hasta inversion mayor si se construye in-house. (2) <strong>Datos faltantes</strong>: ensayo EN 717-1 ~500-1500&euro;, ACV/EPD ~10-25k&euro; (recuperable en 3-5 anos), declaracion EUDR ~0&euro; si tu proveedor de madera ya tiene FSC/PEFC. (3) <strong>GS1</strong>: cuota anual desde ~200&euro;. (4) <strong>Tiempo interno</strong>: el gran coste oculto. Una PYME con EPD ya hecha y ERP/PLM modernos puede tener el primer DPP en <strong>8-12 semanas</strong>; sin esa base, 6-12 meses.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q collapsed" onclick="toggleFaq(this)"><span class="faq-icon">&#x1F3DB;</span> Hay que pagar por el Registro Central? <span class="faq-chevron">&#x25BC;</span></div>
+      <div class="faq-a hidden">No. El Registro Central de la Comision es <strong>gratuito</strong>. Solo se cargan los identificadores unicos y metadatos basicos, no el contenido completo del DPP (que se aloja en tu sistema o el de tu proveedor tecnologico). El coste relevante es interno: gobierno del dato, alta GS1, ensayos faltantes y proveedor tecnologico del DPP.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TRACKLINE CTA -->
+<div class="cta-section">
+  <div class="cta-box">
+    <h2>&#x1F6E0; Proximos pasos: implementacion con Trackline</h2>
+    <p>Trackline es la plataforma de Code Contract para operativizar todo el recorrido descrito en esta guia. Asi se traduce cada fase en acciones concretas:</p>
+    <div class="cta-steps">
+      <div class="cta-step">
+        <div class="cta-step-num">Paso 1</div>
+        <h4>Mapeo de datos</h4>
+        <p>Cargar los 42+6 campos del DPP en Trackline, asignar responsables por departamento y conectar con las fuentes de datos internas (ERP, PLM, laboratorio).</p>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">Paso 2</div>
+        <h4>Recopilacion y evidencia</h4>
+        <p>Cada dato queda registrado con su evidencia: quien lo aporto, cuando, documento soporte. EPDs verificadas, ensayos, certificados FSC/PEFC. Trazabilidad completa.</p>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">Paso 3</div>
+        <h4>Generacion del DPP</h4>
+        <p>Trackline genera el DPP en formato estandar con metadatos de estado. Enlace a EPDs verificadas, evidencias y validacion automatica de los 6 campos del Registro Art. 13.</p>
+      </div>
+      <div class="cta-step">
+        <div class="cta-step-num">Paso 4</div>
+        <h4>Publicacion y registro</h4>
+        <p>Generar QR Digital Link, publicar el visor web del DPP y cargar identificadores en el Registro Central DPP cuando este operativo (19/07/2026).</p>
+      </div>
+    </div>
+    <div class="cta-links">
+      <a class="cta-link cta-link-primary" href="https://trackline.codecontract.com" target="_blank">&#x1F517; Acceder a Trackline</a>
+      <a class="cta-link cta-link-secondary" href="https://codecontract.com" target="_blank">&#x1F517; Code Contract S.L.</a>
+      <a class="cta-link cta-link-secondary" href="https://codecontract-dpp.github.io/dpp-furniture-passport/" target="_blank">&#x1F517; Ver visor DPP Mueble</a>
+      <a class="cta-link cta-link-secondary" href="https://codecontract-dpp.github.io/dpp-furniture-passport/?id=hari-chair" target="_blank">&#x1F517; Ejemplo Silla HARI</a>
+      <a class="cta-link cta-link-secondary" href="https://codecontract-dpp.github.io/dpp-furniture-passport/qr.html" target="_blank">&#x1F517; Generador QR Digital Link</a>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>Fuentes oficiales:</strong>
+  <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj" target="_blank">ESPR (UE) 2024/1781</a> &middot;
+  <a href="https://eur-lex.europa.eu/eli/reg/2023/1115/oj" target="_blank">EUDR (UE) 2023/1115</a> &middot;
+  <a href="https://eur-lex.europa.eu/eli/reg_impl/2023/1464/oj" target="_blank">Reg. 2023/1464 (formaldehido)</a> &middot;
+  <a href="https://www.gs1es.org/" target="_blank">GS1 Spain</a> &middot;
+  <a href="https://www.environdec.com/" target="_blank">EPD International</a>
+  <br>Elaborado por Code Contract S.L. &middot; v0.1 &middot; 26 mayo 2026
+  <br><em>Nota: este documento no constituye asesoramiento juridico. Consultar siempre el texto oficial del reglamento y los actos delegados vigentes.</em>
+</div>
+
+<script>
+function togglePhase(el) {
+  el.classList.toggle('collapsed');
+  el.nextElementSibling.classList.toggle('hidden');
+}
+function toggleFaq(el) {
+  el.classList.toggle('collapsed');
+  el.nextElementSibling.classList.toggle('hidden');
+}
+</script>
+
+</body>
+</html>
