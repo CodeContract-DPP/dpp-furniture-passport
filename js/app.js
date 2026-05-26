@@ -93,9 +93,9 @@ const DPP = (() => {
       (counts.partial ? '<span class="cnt cnt-pa">' + counts.partial + '</span>' : '') +
       (counts.pending ? '<span class="cnt cnt-pe">' + counts.pending + '</span>' : '') +
       '</div>' +
-      '<span class="chevron" id="chev-' + sectionKey + '">\u25BC</span>' +
+      '<span class="chevron" id="chev-' + sectionKey + '">\u25B6</span>' +
       '</div>' +
-      '<div class="section-body" id="body-' + sectionKey + '">' + attrsHTML + '</div>' +
+      '<div class="section-body collapsed" id="body-' + sectionKey + '">' + attrsHTML + '</div>' +
       '</section>';
   }
 
